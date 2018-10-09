@@ -1,15 +1,15 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import GreetingHeader from './greeting-header.jsx';
+import GreetingBody from './greeting-body.jsx';
 
 
-
-const Greeting = ({ currentUser, logout }) => {
+const myGreeting = ({ currentUser, logout }) => {
   const sessionLinks = () => (
     <nav className="login-signup">
-      <Link to="/login">Login</Link>
-      <br></br>
-      <Link to="/signup">Sign up!</Link>
+      <GreetingHeader />
+      <GreetingBody />
     </nav>
   );
   const personalGreeting = () => (
@@ -23,4 +23,4 @@ const Greeting = ({ currentUser, logout }) => {
 };
 
 
-export default Greeting;
+export default myGreeting;

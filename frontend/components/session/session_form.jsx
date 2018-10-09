@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    
+
   }
 
   update(field) {
@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to BenchBnB!
+          Welcome to Quack!
           <br/>
           Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
@@ -68,7 +68,7 @@ class SessionForm extends React.Component {
           </div>
         </form>
       </div>
-    )
+    );
 
   }
 

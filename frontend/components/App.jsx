@@ -13,14 +13,14 @@ import {
 
 const App = () => (
   <div>
-    <header>
-      <h1>Quack</h1>
-      <GreetingContainer />
-    </header>
+    <Switch>
+      <Route path="/login" component={LoginFormContainer} />
+      <Route path="/signup" component={SignupFormContainer} />
+      <Route path="/" component={GreetingContainer} />
 
-    <Route path="/login" component={LoginFormContainer} />
-    <Route path="/signup" component={SignupFormContainer} />
+    </Switch>
+
   </div>
-)
+);
 
 export default App;

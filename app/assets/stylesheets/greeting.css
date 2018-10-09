@@ -1,0 +1,142 @@
+/* ///////////////////////////////////
+BODY
+/////////////////////////////////// */
+
+.greeting-header {
+  height: 70px;
+  padding: 0px 6%;
+}
+.greeting-header-list {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  height: 100%;
+  width: 100%;
+}
+
+.quack-logo {
+  height: 25px;
+  padding: 16px;
+  margin-top: 6px;
+}
+
+.greeting-header-list li {
+  padding: 16px;
+  margin-top: 10px;
+  list-style-type: none;
+  font-family: Arial;
+  display: flex;
+  vertical-align: middle;
+  height: 19px;
+  color: #8c8e9d;
+  font-weight: 0;
+}
+
+.why-quack {
+  min-width: 92px;
+}
+
+
+.greeting-header-list li span:hover {
+  color: #3f46ad;
+  cursor: pointer
+}
+
+.greeting-header-login {
+  position: absolute;
+  top: 0px;
+  right: 245px;
+}
+
+
+.greeting-header-signup {
+  padding: 13px 16px 11px 16px;
+
+  font-family: Arial;
+  height: 19px;
+  margin-top: 14px;
+  background-color: #3f46ad;
+  text-align: center;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  position: absolute;
+  top: 0px;
+  right: 80px;
+}
+
+.greeting-header-signup:hover {
+  background-color: #1c299d;
+}
+
+
+/* ///////////////////////////////////
+BODY
+/////////////////////////////////// */
+
+.body {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: row;
+  margin: 65px;
+
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 650px;
+}
+.image-container {
+  width: 40%;
+  min-width: 250px;
+  padding-right: 100px;
+}
+.new-hotness {
+  width: 100%;
+}
+.body-headline {
+  font-family: TIMES;
+  font-size: 80px;
+  font-weight: 1000;
+  color: #323648;
+  font-weight: bold;
+  max-width: 660px;
+  margin-bottom: 32px;
+}
+
+.body-info {
+  color: #75798c;
+  font-family: Courier;
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+
+.body-signup {
+  padding: 24px 16px 11px 4px;
+  width: 170px;
+  font-family: Arial;
+  height: 32px;
+  margin-top: 14px;
+  background-color: #3f46ad;
+  text-align: center;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.body-signup:hover {
+  background-color: #1c299d;
+}
+
+.body-signin {
+  font-family: Arial;
+  color: #808499;
+  margin-top: 16px;
+}
+
+.body-signin-link {
+  color: #3f46ad;
+  border-bottom: 1px solid #3f46ad;
+}
