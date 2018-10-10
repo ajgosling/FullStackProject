@@ -10,9 +10,7 @@ class SessionForm extends React.Component {
       username: "",
       password: ""
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.demoLogin = this.demoLogin.bind(this);
 
   }
 
@@ -29,16 +27,13 @@ class SessionForm extends React.Component {
 
   }
 
-  demoLogin(e) {
-    e.preventDefault();
-    this.props.login({username: "goose", password: "starwars"});
-  }
 
   renderErrors() {
+    console.log(this.props.errors);
     return(
       <ul className="session-errors">
         {this.props.errors.map((err, idx) => (
-          <li key={`error-${idx}`} className="err">
+          <li key={`err-${idx}`}>
             - {err}
           </li>
         ))}
@@ -48,35 +43,38 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="session-form-div">
+      <div className="session-body-container">
+
         <GreetingHeader />
-        <div id="session-form" className="group">
+
+        <div className="session-form-container">
+          {this.renderErrors()}
           <form className="session-form">
 
-          {this.renderErrors()}
+
             <div className="form-title">
               {this.props.formType} to Quack
             </div>
 
-            <p className="label"> Enter your <span>username</span> and <span>password</span></p>
+            <p className="label"> Enter your username and password</p>
             <input
               type="text"
-              className="session-input group"
+              className="user-input"
               placeholder="goose"
               value={this.state.username}
               onChange={this.update('username')}
             />
             <br />
             <input
-              type="password"
-              className="session-input group"
+              type="text"
+              className="user-input"
               placeholder="password"
               value={this.state.password}
               onChange={this.update('password')}
             />
             <br />
-            <button className="session-button group" onClick={this.handleSubmit}><span>{this.props.formType}</span></button>
-            <button className="session-button group" onClick={this.demoLogin}><span>Demo Login</span></button>
+            <button className="session-button" onClick={this.handleSubmit}><span>{this.props.formType}</span></button>
+            <button className="session-button" onClick={this.props.demoLogin}><span>Demo Login</span></button>
             <div className="checkbox">
               <input type="checkbox" className="checkbox-input" />
               <span>Remember me</span>

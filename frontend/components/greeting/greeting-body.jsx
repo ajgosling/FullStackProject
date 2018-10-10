@@ -15,9 +15,7 @@ const GreetingBody = () => (
       <p className='body-info'>
         When your team needs to kick off a project,
         hire a new employee, deploy some code,
-        review a sales contract, finalize next year's budget,
-        measure an A/B test, plan your next office opening,
-        and more, Quack has you covered.
+        play a quick round of duck-duck-goose, finalize next year's budget, visit the local quail-hunter and "paint" their truck white, plan your next office opening, and more, Quack has you covered.
       </p>
 
       <Link className="body-signup" to="/signup">GET STARTED</Link>

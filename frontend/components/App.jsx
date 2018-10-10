@@ -2,7 +2,7 @@ import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
-import WorkspaceContainer from './workspace/workspace_container';
+import Workspace from './workspace/workspace';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import {
   Route,
@@ -17,7 +17,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/channels/:channelId" component={WorkspaceContainer} />
+      <ProtectedRoute exact path="/channels/:channelId" component={Workspace} />
       <AuthRoute path="/" component={GreetingContainer} />
     </Switch>
   </div>

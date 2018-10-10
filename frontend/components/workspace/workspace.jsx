@@ -1,15 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import WorkspaceSidebar from './workspace_sidebar';
 
-const Workspace = ({currentUser, logout}) => {
+const Workspace = () => {
   return (
-    <div>
-      <h2 className="header-name">Hi, {currentUser.username}!</h2>
-      <button className="header-button" onClick={logout}>Log Out</button>
-
-
+    <div className="workspace">
+      <WorkspaceSidebar />
+      <div className="middlechat">
+        i'm the chat in the middle!
+      </div>
     </div>
-
   );
-}
+};
+
 
 export default Workspace;
