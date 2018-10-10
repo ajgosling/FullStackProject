@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import GreetingHeader from '../greeting/greeting-header';
 
 class SessionForm extends React.Component {
 
@@ -11,6 +12,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
 
   }
 
@@ -22,17 +24,22 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
 
+    this.props.processForm(this.state);
+
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    this.props.login({username: "goose", password: "starwars"});
   }
 
   renderErrors() {
     return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
+      <ul className="session-errors">
+        {this.props.errors.map((err, idx) => (
+          <li key={`error-${idx}`} className="err">
+            - {err}
           </li>
         ))}
       </ul>
@@ -41,38 +48,46 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container">
+      <div className="session-form-div">
+        <GreetingHeader />
+        <div id="session-form" className="group">
+          <form className="session-form">
 
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Quack!
-          <br/>
-          Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
-          <div className="login-form">
-            <br/>
-            <label>Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
-          </div>
-        </form>
+            <div className="form-title">
+              {this.props.formType} to Quack
+            </div>
+
+            <p className="label"> Enter your <span>username</span> and <span>password</span></p>
+            <input
+              type="text"
+              className="session-input group"
+              placeholder="goose"
+              value={this.state.username}
+              onChange={this.update('username')}
+            />
+            <br />
+            <input
+              type="password"
+              className="session-input group"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+            />
+            <br />
+            <button className="session-button group" onClick={this.handleSubmit}><span>{this.props.formType}</span></button>
+            <button className="session-button group" onClick={this.demoLogin}><span>Demo Login</span></button>
+            <div className="checkbox">
+              <input type="checkbox" className="checkbox-input" />
+              <span>Remember me</span>
+
+            </div>
+          </form>
+        </div>
       </div>
     );
-
   }
+
 
 
 }

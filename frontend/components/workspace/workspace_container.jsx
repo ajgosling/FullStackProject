@@ -1,9 +1,22 @@
+import { connect } from 'react-redux';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { signup } from '../../actions/session_actions';
+import Workspace from './workspace';
 
-const WorkspaceContainer = () => {
-  return (
-    <h1>This is Workspace Container</h1>
-  );
+const mapStateToProps = ({session, entities: {users}}) => {
+  return {
+    currentUser: users[session.id]
+  };
 };
 
-export default WorkspaceContainer;
+const mapDispatchToProps = (dispatch) => {
+  return {
+  logout: () => dispatch(logout())
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Workspace);
