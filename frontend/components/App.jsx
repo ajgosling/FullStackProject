@@ -14,13 +14,11 @@ import {
 
 const App = () => (
   <div>
-    <header>
-      <GreetingContainer />
-    </header>
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/channels/:channelId" component={WorkspaceContainer} />
+      <AuthRoute path="/" component={GreetingContainer} />
     </Switch>
   </div>
 );
