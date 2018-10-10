@@ -9,6 +9,12 @@ class WorkspaceSidebar extends React.Component {
     return (
       <div className="workspace-sidebar">
         <div className="current-user-info">
+          <div className="workspace-info">
+            <h1 className="workspace-name">Rabbit-Season   </h1>
+            <div className="down-caret">v</div>
+
+          </div>
+
           <h2>Hi {this.props.currentUser.username} !</h2>
           <button onClick={this.props.logout}>Logout</button>
 
@@ -17,7 +23,7 @@ class WorkspaceSidebar extends React.Component {
           <ul>
             <li>I will be the channel list</li>
             <li>also a channel</li>
-            <li>jet fuel can't melt steel beams</li>
+            <li>jet fuel can't melt steel memes</li>
           </ul>
         </div>
 
