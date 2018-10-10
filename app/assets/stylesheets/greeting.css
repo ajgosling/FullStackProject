@@ -5,6 +5,7 @@ BODY
 .greeting-header {
   height: 70px;
   padding: 0px 6%;
+  border-bottom: 1px solid lightgray;
 }
 .greeting-header-list {
   display: flex;
@@ -22,9 +23,9 @@ BODY
 
 .greeting-header-list li {
   padding: 16px;
-  margin-top: 10px;
+  margin-top: 8px;
   list-style-type: none;
-  font-family: Arial;
+  font-family: "Averta";
   display: flex;
   vertical-align: middle;
   height: 19px;
@@ -52,7 +53,7 @@ BODY
 .greeting-header-signup {
   padding: 13px 16px 11px 16px;
 
-  font-family: Arial;
+  /* font-family: Arial; */
   height: 19px;
   margin-top: 14px;
   background-color: #3f46ad;
@@ -63,6 +64,10 @@ BODY
   position: absolute;
   top: 0px;
   right: 80px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .greeting-header-signup:hover {
@@ -108,7 +113,7 @@ BODY
 
 .body-info {
   color: #75798c;
-  font-family: Courier;
+  /* font-family: Courier; */
   font-size: 20px;
   margin-bottom: 32px;
 }
@@ -116,7 +121,7 @@ BODY
 .body-signup {
   padding: 24px 16px 11px 4px;
   width: 170px;
-  font-family: Arial;
+  /* font-family: Arial; */
   height: 32px;
   margin-top: 14px;
   background-color: #3f46ad;
@@ -124,6 +129,10 @@ BODY
   color: white;
   border-radius: 4px;
   font-size: 14px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .body-signup:hover {
@@ -131,7 +140,7 @@ BODY
 }
 
 .body-signin {
-  font-family: Arial;
+  /* font-family: Arial; */
   color: #808499;
   margin-top: 16px;
 }
