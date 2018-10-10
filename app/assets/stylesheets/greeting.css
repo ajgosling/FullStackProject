@@ -52,8 +52,6 @@ BODY
 
 .greeting-header-signup {
   padding: 13px 16px 11px 16px;
-
-  /* font-family: Arial; */
   height: 19px;
   margin-top: 14px;
   background-color: #3f46ad;
@@ -64,9 +62,6 @@ BODY
   position: absolute;
   top: 0px;
   right: 80px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
@@ -83,7 +78,7 @@ BODY
   padding-top: 60px;
   display: flex;
   flex-direction: row;
-  margin: 65px;
+  justify-content: space-around;
 
 }
 
@@ -94,12 +89,12 @@ BODY
   height: 650px;
 }
 .image-container {
-  width: 40%;
   min-width: 250px;
-  padding-right: 100px;
 }
 .new-hotness {
   width: 100%;
+  min-width: 500px;
+  max-width: 600px;
 }
 .body-headline {
   font-family: TIMES;
@@ -113,7 +108,6 @@ BODY
 
 .body-info {
   color: #75798c;
-  /* font-family: Courier; */
   font-size: 20px;
   margin-bottom: 32px;
 }
@@ -121,7 +115,6 @@ BODY
 .body-signup {
   padding: 24px 16px 11px 4px;
   width: 170px;
-  /* font-family: Arial; */
   height: 32px;
   margin-top: 14px;
   background-color: #3f46ad;
@@ -129,9 +122,6 @@ BODY
   color: white;
   border-radius: 4px;
   font-size: 14px;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
@@ -140,7 +130,6 @@ BODY
 }
 
 .body-signin {
-  /* font-family: Arial; */
   color: #808499;
   margin-top: 16px;
 }
