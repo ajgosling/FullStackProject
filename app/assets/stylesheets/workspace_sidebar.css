@@ -23,6 +23,13 @@
 
 .current-user-info:hover {
   background-color: #412656
+
+}
+
+.current-user-info:hover div {
+  color: white;
+  font-weight: bold;
+
 }
 
 .workspace-info {
@@ -31,13 +38,39 @@
   color: white;
   font-weight: bold;
   font-size: 18px;
+  margin-bottom: 4px;
 }
 
 .down-caret {
   /* linked to workspace sidebar color */
   color: rgb(202,196,201);
   font-size: 11px;
-  margin-left: 6px;
+  margin-left: 10px;
   margin-top: 4px;
   font-weight: 300;
+}
+
+.user-logout {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.user-logout button {
+  display: flex;
+  vertical-align: middle;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 1px 4px;
+}
+
+.user-logout button:hover {
+  cursor: pointer;
+}
+
+.online-dot {
+  margin-right: 4px;
+  width: 8px;
+  height: 8px;
 }

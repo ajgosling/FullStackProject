@@ -29,10 +29,18 @@
   "devDependencies": {
     "file-loader": "^2.0.0",
     "url-loader": "^1.1.1"
+<<<<<<< HEAD
+=======
+  },
+  "engines": {
+    "node": "8.4.0",
+    "npm": "6.1.0"
+>>>>>>> fe0b4e2481b87ef933698a8dc75c4af364b91322
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch --mode=development"
+    "webpack": "webpack --watch --mode=development",
+    "postinstall": "webpack"
   },
   "keywords": [],
   "author": "",
