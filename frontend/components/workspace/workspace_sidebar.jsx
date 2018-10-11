@@ -14,9 +14,14 @@ class WorkspaceSidebar extends React.Component {
             <div className="down-caret">v</div>
 
           </div>
+          <div className="user-logout">
 
-          <h2>Hi {this.props.currentUser.username} !</h2>
-          <button onClick={this.props.logout}>Logout</button>
+            <h2>
+              <img className='online-dot' src={window.images.online} />
+              {this.props.currentUser.username}</h2>
+            <button onClick={this.props.logout}>Logout</button>
+          </div>
+
 
         </div>
         <div className="channel-list">
