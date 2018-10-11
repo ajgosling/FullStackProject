@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   update(field) {
@@ -27,9 +27,13 @@ class SessionForm extends React.Component {
 
   }
 
+  handleDemoLogin(e) {
+    e.preventDefault();
+    this.props.demoLogin();
+
+  }
 
   renderErrors() {
-    console.log(this.props.errors);
     return(
       <ul className="session-errors">
         {this.props.errors.map((err, idx) => (
@@ -74,7 +78,7 @@ class SessionForm extends React.Component {
             />
             <br />
             <button className="session-button" onClick={this.handleSubmit}><span>{this.props.formType}</span></button>
-            <button className="session-button" onClick={this.props.demoLogin}><span>Demo Login</span></button>
+            <button className="session-button" onClick={this.handleDemoLogin}><span>Demo Login</span></button>
             <div className="checkbox">
               <input type="checkbox" className="checkbox-input" />
               <span>Remember me</span>

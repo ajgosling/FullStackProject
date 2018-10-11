@@ -1,12 +1,24 @@
 {
-  "name": "slack",
+  "name": "quack",
   "version": "1.0.0",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "main": "webpack.config.js",
+  "description": "air bnb for benches!",
+  "main": "index.js",
   "directories": {
-    "lib": "lib",
     "test": "test"
   },
+  "private": true,
+  "engines": {
+    "node": "10.10.0",
+    "npm": "6.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
+    "webpack": "webpack --watch --mode=development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
@@ -25,24 +37,5 @@
     "webpack-cli": "^3.1.2",
     "file-loader": "^2.0.0",
     "url-loader": "^1.1.1"
-  },
-  "devDependencies": {
-    "file-loader": "^2.0.0",
-    "url-loader": "^1.1.1"
-<<<<<<< HEAD
-=======
-  },
-  "engines": {
-    "node": "8.4.0",
-    "npm": "6.1.0"
->>>>>>> fe0b4e2481b87ef933698a8dc75c4af364b91322
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch --mode=development",
-    "postinstall": "webpack"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
