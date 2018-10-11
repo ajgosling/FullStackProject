@@ -29,7 +29,6 @@ class SessionForm extends React.Component {
 
 
   renderErrors() {
-    console.log(this.props.errors);
     return(
       <ul className="session-errors">
         {this.props.errors.map((err, idx) => (
