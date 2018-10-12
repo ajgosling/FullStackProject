@@ -14,6 +14,10 @@ class SessionForm extends React.Component {
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearSessionErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -63,7 +67,7 @@ class SessionForm extends React.Component {
             <p className="label"> Enter your username and password</p>
 
             {this.renderErrors()}
-            
+
             <input
               type="text"
               className="user-input"

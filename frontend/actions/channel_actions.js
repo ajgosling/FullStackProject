@@ -43,9 +43,14 @@ export const fetchChannel = (id) => {
 
 export const createChannel = (channel) => (dispatch) => {
   return (ChannelApiUtil.ajaxCreateChannel(channel)
-    .then((newChannel) => (
-      dispatch(receiveChannel(newChannel))
-    ), err => (
+    .then((newChannel) => {
+
+      return (
+        dispatch(receiveChannel(newChannel))
+      )
+
+
+    }, err => (
       dispatch(receiveChannelErrors(err.responseJSON))
     ))
   );

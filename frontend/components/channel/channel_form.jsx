@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createChannel } from '../../actions/channel_actions';
 import { closeChannelModal } from '../../actions/ui_actions';
+import { withRouter } from 'react-router-dom'
+
 const mapStateToProps = (state) => ({
   errors: state.errors.channel,
   title: '',
@@ -40,6 +42,7 @@ class ChannelForm extends React.Component {
 
   handleSubmit() {
     this.props.createChannel(this.state)
+      .then((res) => this.props.history.push(`/channels/${res.payload.channel.id}`))
       .then(() => this.props.closeChannelModal())
   }
 
@@ -56,6 +59,7 @@ class ChannelForm extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     if (this.props.channelFormOpen) {
       return (
         <div className="fullscreen">
@@ -113,7 +117,7 @@ class ChannelForm extends React.Component {
         </div>
       )
     } else {
-      return <div></div>
+      return null;
     }
 
 
@@ -121,7 +125,7 @@ class ChannelForm extends React.Component {
 
 }
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChannelForm);
+)(ChannelForm));
