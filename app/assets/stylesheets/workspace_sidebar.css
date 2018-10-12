@@ -18,7 +18,12 @@
 .current-user-info {
   height: 61px;
   padding: 12px 12px 0 15px;
+  transition: all 0.2s ease-in-out;
 
+}
+
+.current-user-info div {
+  font-weight: bold;
 }
 
 .current-user-info:hover {
@@ -28,7 +33,6 @@
 
 .current-user-info:hover div {
   color: white;
-  font-weight: bold;
 }
 
 .workspace-info {

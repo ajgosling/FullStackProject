@@ -1,9 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-
+import ChannelList from '../channel/channel_list';
 
 class WorkspaceSidebar extends React.Component {
+
+
 
   render() {
     return (
@@ -24,14 +26,11 @@ class WorkspaceSidebar extends React.Component {
 
 
         </div>
-        <div className="channel-list">
-          <ul>
-            <li>I will be the channel list</li>
-            <li>also a channel</li>
-            <li>jet fuel can't melt steel memes</li>
-          </ul>
-        </div>
-
+        <ChannelList />
+        <h1> _ </h1>
+        <h1> _ </h1>
+        <h1> _ </h1>
+        <h1> _ </h1>
         <div className="direct-list">
           <ul>
             <li>I am direct message between trump and russians</li>
@@ -50,7 +49,6 @@ const mapStateToProps = ({session, entities: {users}}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    // fetchChannels: () => dispatch(fetchChannels()),
     logout: () => dispatch(logout())
 });
 

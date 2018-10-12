@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 import {signup, login, logout} from './actions/session_actions';
+import {fetchChannels, fetchChannel} from './actions/channel_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -27,7 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.signup = signup;
   window.login = login;
   window.logout = logout;
+  window.fetchChannels = fetchChannels;
 
+  window.fetchChannel = fetchChannel;
 
   // just for testing
   window.store = store;

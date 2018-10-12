@@ -1,0 +1,74 @@
+.channel-sidebar {
+  line-height: 26px;
+  font-size: 16px;
+}
+
+.channels-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 12px 0 15px;
+  margin-top: 20px;
+  color: white
+}
+
+.channels-title {
+  font-weight: 400;
+  width: 172px;
+}
+
+ .create-channel-button {
+  font-weight: 300;
+  font-size: 22px;
+  color: rgb(202,196,201);
+  transition: all 0.2s ease-in-out;
+}
+
+
+.create-channel-button:hover {
+  color: white;
+}
+
+.channel-symbol {
+  font-weight: 400;
+  padding: 0 5px;
+  font-size: 14px;
+}
+.channel-li {
+  height: 26px;
+  padding: 0px 12px 0px 15px;
+  font-size: 16px;
+  color: rgb(202,196,201);
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.channel-li:hover {
+  background: #7f599c;
+  color: white;
+}
+
+#selected-channel {
+  background: #4C9689;
+  color: white;
+}
+
+
+.channel-li button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+}
+
+.title-symbol {
+  max-height: 26px; //keeps channel title in line even w lock icon
+  max-width: 9px;
+  margin-right: 7px;
+  color: #969096;
+}
+
+.lock-title-symbol {
+  font-size: 13px;
+  opacity: 0.85;
+}

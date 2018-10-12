@@ -67,6 +67,7 @@ class SessionForm extends React.Component {
               placeholder="goose"
               value={this.state.username}
               onChange={this.update('username')}
+              required
             />
             <br />
             <input
@@ -75,6 +76,7 @@ class SessionForm extends React.Component {
               placeholder="password"
               value={this.state.password}
               onChange={this.update('password')}
+              required
             />
             <br />
             <button className="session-button" onClick={this.handleSubmit}><span>{this.props.formType}</span></button>

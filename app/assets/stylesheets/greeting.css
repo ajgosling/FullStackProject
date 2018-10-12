@@ -87,6 +87,7 @@ BODY
   flex-direction: column;
   width: 600px;
   height: 650px;
+  margin-right: 80px;
 }
 .image-container {
   min-width: 250px;
