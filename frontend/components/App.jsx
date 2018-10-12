@@ -19,7 +19,6 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/channels/new" component={ChannelForm} />
       <ProtectedRoute exact path="/channels/:channelId" component={Workspace} />
       <AuthRoute path="/" component={GreetingContainer} />
     </Switch>

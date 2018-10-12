@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
         <GreetingHeader />
 
         <div className="session-form-container">
-          {this.renderErrors()}
+
           <form className="session-form">
 
 
@@ -61,6 +61,9 @@ class SessionForm extends React.Component {
             </div>
 
             <p className="label"> Enter your username and password</p>
+
+            {this.renderErrors()}
+            
             <input
               type="text"
               className="user-input"

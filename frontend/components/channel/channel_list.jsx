@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ChannelListItem from './channel_list_item';
+import { openChannelModal } from '../../actions/ui_actions';
 
 class ChannelList extends React.Component {
   //general is the first channel, otherwise sorted alphabetically
@@ -15,12 +16,15 @@ class ChannelList extends React.Component {
 
         <div className="channels-header">
           <div className="channels-title"><h2>Channels</h2></div>
-          <Link className="create-channel-button" to="/channels/new">&oplus;</Link>
+          <button
+            className="create-channel-button"
+            onClick={this.props.openChannelModal}
+            >&oplus;</button>
         </div>
 
         <div className="channel-ul">
           <ul>
-            {this.props.channels.map((channel) => <ChannelListItem key={channel.id} channel={channel}/>)}
+            {this.props.channels.map((channel) => <ChannelListItem key={channel.id} channel={channel} selectedChannel={this.props.selectedChannel}/>)}
           </ul>
         </div>
 
@@ -29,12 +33,15 @@ class ChannelList extends React.Component {
   }
 }
 
-const mapStateToProps = ({entities: {channels}}) => ({
-  channels: Object.values(channels)
-})
+const mapStateToProps = ({entities: {channels}}) => {
+  return {
+    channels: Object.values(channels)
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
-    fetchChannels: () => dispatch(fetchChannels())
+    fetchChannels: () => dispatch(fetchChannels()),
+    openChannelModal: () => dispatch(openChannelModal())
 });
 
 export default connect(

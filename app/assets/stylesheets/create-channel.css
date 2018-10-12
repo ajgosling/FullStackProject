@@ -1,5 +1,12 @@
 .fullscreen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
   padding-top: 100px;
+  background-color: white;
 }
 
 .create-channel-form {
@@ -11,12 +18,13 @@
 .create-channel-form h2 {
   font-size: 36px;
   font-weight: bold;
-
+  color: black;
 }
 
 .create-channel-form p {
   color: #7b7979;
   margin: 20px 0 0 5px;
+  font-weight: 200;
 }
 
 .form-privacy {
@@ -27,9 +35,84 @@
 .form-privacy * {
   display: inline-block;
   margin: 0;
+
 }
 
+.private-button {
+  background-color: #8862e3;
+  color: white;
+  border-radius: 40px;
+  padding: 1px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
 .form-privacy aside {
   margin-left: 15px;
-    color: #7b7979;
+  color: #7b7979;
+  font-weight: 200;
+}
+
+.channel-input-container {
+  height: 50px;
+}
+
+.channel-input-container h3 {
+  margin: 20px 0 5px 0;
+  color: black;
+}
+
+.channel-input-container input {
+  height: 40px;
+  width: 620px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.purpose-field {
+  display: flex;
+  flex-direction: row;
+}
+
+.purpose-field aside {
+  margin: 22px 0 3px 5px;
+  color: #7b7979;
+}
+
+.channel-form-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 5px;
+
+}
+
+.cancel-button {
+  padding: 15px 18px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  color: #7b7979;
+  font-weight: bold;
+}
+
+.cancel-button:hover {
+  color: #8862e3;
+  cursor: pointer;
+}
+
+.submit-button {
+  padding: 15px 18px;
+  margin-left: 10px;
+  background-color: #8862e3;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+
+}
+
+.submit-button:hover {
+  background-color: #6743be;
+  cursor: pointer;
 }

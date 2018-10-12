@@ -1,8 +1,9 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import ChannelList from '../channel/channel_list';
-
+import ChannelForm from '../channel/channel_form';
 class WorkspaceSidebar extends React.Component {
 
 
@@ -26,7 +27,7 @@ class WorkspaceSidebar extends React.Component {
 
 
         </div>
-        <ChannelList />
+        <ChannelList selectedChannel={this.props.selectedChannel}/>
         <h1> _ </h1>
         <h1> _ </h1>
         <h1> _ </h1>
@@ -38,21 +39,25 @@ class WorkspaceSidebar extends React.Component {
             <li>jesus montecristo</li>
           </ul>
         </div>
+        <ChannelForm />
       </div>
 
     );
   }
 }
 
-const mapStateToProps = ({session, entities: {users}}) => ({
-    currentUser: users[session.id]
+const mapStateToProps = ({session, entities: {users}}, ownProps) => ({
+    currentUser: users[session.id],
+    selectedChannel: ownProps.match.params.channelId
 });
+
+
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout())
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(WorkspaceSidebar);
+)(WorkspaceSidebar));

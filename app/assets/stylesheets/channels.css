@@ -21,7 +21,9 @@
   font-weight: 300;
   font-size: 22px;
   color: rgb(202,196,201);
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
+
 }
 
 
@@ -36,6 +38,7 @@
 }
 .channel-li {
   height: 26px;
+  max-height: 26px;
   padding: 0px 12px 0px 15px;
   font-size: 16px;
   color: rgb(202,196,201);
@@ -49,8 +52,9 @@
 }
 
 #selected-channel {
-  background: #4C9689;
+  background: #d64cc8;
   color: white;
+  font-weight: bold;
 }
 
 
@@ -71,4 +75,11 @@
 .lock-title-symbol {
   font-size: 13px;
   opacity: 0.85;
+}
+
+.channel-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 172px;
 }
