@@ -25,7 +25,7 @@ Channel.create({
 
 Channel.create({
   title: "quack-academy",
-  description: "Learn how to be a waterfowl - don't pay anything until you find your first full-time position in a flock",
+  description: "Learn how to be a waterfowl - don't pay anything until you find your first job",
   creator_id: 3
   })
 
@@ -37,3 +37,31 @@ Subscription.create({user_id: 1, channel_id: 3})
 Subscription.create({user_id: 2, channel_id: 2})
 Subscription.create({user_id: 2, channel_id: 3})
 Subscription.create({user_id: 3, channel_id: 3})
+
+Message.create({
+  body: "I am the first message on quack!",
+  channel_id: 1,
+  user_id: 1
+  })
+Message.create({
+  body: "Wow Look at me go!",
+  channel_id: 1,
+  user_id: 1
+  })
+Message.create({
+  body: "Now its time to test!",
+  channel_id: 1,
+  user_id: 1
+  })
+
+Message.create({
+  body: "This channel has a message!",
+  channel_id: 2,
+  user_id: 1
+  })
+
+Message.create({
+  body: "So does this one!",
+  channel_id: 3,
+  user_id: 1
+  })

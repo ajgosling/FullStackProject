@@ -1,24 +1,52 @@
-.workspace {
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-  width: 100%;
-  background-color: white;
+.workspace-sidebar {
+  background-color: #52326b;
+  color: rgb(202,196,201);
+  margin-top: 73px;
 }
 
-.workspace-sidebar {
+.channels-and-messages {
   width: 220px;
   height: 100%;
   background-color: #52326b;
-  color: rgb(202,196,201);
   font-weight: 300;
   font-size: 16px;
+  overflow: hidden;
+}
+
+.channels-and-messages:hover {
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #3f2652;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    opacity: 0.5;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,0,0,0.4);
 }
 
 .current-user-info {
   height: 61px;
+  width: 193px;
   padding: 12px 12px 0 15px;
   transition: all 0.2s ease-in-out;
+  background-color: #52326b;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 
 }
 
@@ -56,7 +84,6 @@
 .user-logout {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   vertical-align: middle;
 }
 
@@ -66,6 +93,7 @@
   border: 1px solid white;
   border-radius: 5px;
   padding: 1px 4px;
+  margin-left: 67px;
 }
 
 .user-logout button:hover {

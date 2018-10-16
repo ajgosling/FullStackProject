@@ -19,3 +19,17 @@ export const ajaxCreateChannel = (channel) => {
     data: {channel}
   });
 };
+
+export const ajaxFetchChannelUsers = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/channels/${id}/users`
+  });
+};
+
+export const ajaxFetchChannelMessages = (id) => {
+  return $.ajax({
+    method: 'GET',
+    url: `/api/channels/${id}/messages`
+  });
+};

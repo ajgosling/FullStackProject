@@ -1,4 +1,11 @@
 class Api::UsersController < ApplicationController
+
+  def index
+    @users = Channel.find(params[:channel_id]).users
+
+    render "api/users/index"
+  end
+
   def create
     @user = User.new(user_params)
 

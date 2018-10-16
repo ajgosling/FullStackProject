@@ -44,6 +44,10 @@ class ChannelForm extends React.Component {
     this.props.createChannel(this.state)
       .then((res) => this.props.history.push(`/channels/${res.payload.channel.id}`))
       .then(() => this.props.closeChannelModal())
+    this.setState({
+      title: '',
+      description: ''
+    })
   }
 
   renderErrors() {
@@ -59,7 +63,6 @@ class ChannelForm extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (this.props.channelFormOpen) {
       return (
         <div className="fullscreen">

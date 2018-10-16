@@ -8,7 +8,8 @@ const _general = {
   1: {
     "id": 1,
     "title": "general",
-    "direct": false
+    "direct": false,
+    "members": [1]
   }
 }
 

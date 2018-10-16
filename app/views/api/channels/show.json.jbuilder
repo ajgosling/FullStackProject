@@ -1,4 +1,5 @@
 
 json.set! :channel do
   json.partial! "api/channels/channel", channel: @channel
+  json.show true
 end

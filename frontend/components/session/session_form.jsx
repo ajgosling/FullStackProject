@@ -8,7 +8,8 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      submitTimeout: null,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
@@ -26,10 +27,9 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     this.props.processForm(this.state);
-
   }
+
 
   handleDemoLogin(e) {
     e.preventDefault();

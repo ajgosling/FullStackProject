@@ -1,0 +1,158 @@
+.channel-info-container {
+  min-width: 280px;
+  width: 280px;
+  max-height: 100%;
+  border-left: 1px solid lightgray;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.channel-info-container.collapsed {
+  min-width: 0px;
+  width: 0;
+}
+
+.channel-info-title {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  white-space: nowrap;
+}
+
+.channel-info-title div {
+  margin: auto 0;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.channel-info-title button {
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.fa-times {
+  color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+.fa-times:hover {
+  color: #885cb5;
+  cursor: pointer;
+}
+
+.channel-info-description {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease-in-out;
+}
+.channel-info-description * {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  font-size: 18px;
+}
+
+.channel-info-description p {
+  height: 30px;
+  white-space: nowrap;
+}
+
+.fa-info-circle {
+  height: 18px;
+  width: 18px;
+  color: gray;
+  margin: 0 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.channel-info-description i:hover {
+  color: #885cb5;
+  cursor: pointer;
+}
+.channel-info-description:hover {
+  color: #885cb5;
+  cursor: pointer;
+}
+
+.fa-caret-down {
+  height: 10px;
+  margin: auto;
+  margin-right: 10px;
+  color: gray;
+  transition: all 0.2s ease-in-out;
+}
+
+.fa-caret-down.collapsed {
+    transform: rotate(-90deg);
+}
+
+.channel-description-open {
+  border-bottom: 1px solid lightgray;
+}
+
+.channel-description-content {
+  min-height: 100px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+
+
+.channel-description-content.collapsed {
+  min-height: 0px;
+  height: 0px;
+  padding-bottom: 0;
+}
+
+.channel-description-content h2 {
+  margin: 0 10px;
+  color: darkgray;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.channel-description-content p {
+  margin: 10px;
+  font-size: 14px;
+}
+
+.users-duck {
+  height: 20px;
+  width: 24px;
+  margin: 0 10px;
+}
+.user-list-element {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  vertical-align: middle;
+  line-height: 35px;
+  padding: 3px;
+}
+
+.user-list-element:hover {
+  background-color: #eaf7ff;
+  border-top: 1px solid purple;
+  border-bottom: 1px solid purple;
+}
+
+.user-list-picture {
+  height: 20px;
+  width: 20px;
+  margin: 0 10px;
+}

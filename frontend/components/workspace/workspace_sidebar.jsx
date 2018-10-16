@@ -4,10 +4,8 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import ChannelList from '../channel/channel_list';
 import ChannelForm from '../channel/channel_form';
+
 class WorkspaceSidebar extends React.Component {
-
-
-
   render() {
     return (
       <div className="workspace-sidebar">
@@ -25,20 +23,22 @@ class WorkspaceSidebar extends React.Component {
             <button onClick={this.props.logout}>Logout</button>
           </div>
 
+        </div>
+        <div className="channels-and-messages">
+          <ChannelList channels={this.props.channels} selectedChannel={this.props.selectedChannel}/>
+          <h1> _ </h1>
+          <h1> _ </h1>
+          <h1> _ </h1>
+          <h1> _ </h1>
+          <div className="direct-list">
+            <ul>
+              <li>I am direct message between trump and russians</li>
+              <li>^wow that's controversial</li>
+              <li>jesus montecristo</li>
+            </ul>
+          </div>
+        </div>
 
-        </div>
-        <ChannelList selectedChannel={this.props.selectedChannel}/>
-        <h1> _ </h1>
-        <h1> _ </h1>
-        <h1> _ </h1>
-        <h1> _ </h1>
-        <div className="direct-list">
-          <ul>
-            <li>I am direct message between trump and russians</li>
-            <li>^wow that's controversial</li>
-            <li>jesus montecristo</li>
-          </ul>
-        </div>
         <ChannelForm />
       </div>
 
@@ -46,18 +46,7 @@ class WorkspaceSidebar extends React.Component {
   }
 }
 
-const mapStateToProps = ({session, entities: {users}}, ownProps) => ({
-    currentUser: users[session.id],
-    selectedChannel: ownProps.match.params.channelId
-});
 
 
 
-const mapDispatchToProps = dispatch => ({
-    logout: () => dispatch(logout())
-});
-
-export default withRouter(connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(WorkspaceSidebar));
+export default WorkspaceSidebar;
