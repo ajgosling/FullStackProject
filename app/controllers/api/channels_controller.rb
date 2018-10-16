@@ -1,6 +1,6 @@
 class Api::ChannelsController < ApplicationController
   def index
-    @channels = Channel.all
+    @channels = current_user.channels
     render "api/channels/index"
   end
 

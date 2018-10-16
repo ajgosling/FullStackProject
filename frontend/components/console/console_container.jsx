@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ConsoleHeader from './console_header';
 import ChannelInfoContainer from './channel_info_container';
-import ConsoleChat from './console_chat';
+import MessageIndex from '../messages/message_index';
 import MessageForm from './message_form';
 
 const ConsoleContainer = (props) => {
@@ -11,7 +11,7 @@ const ConsoleContainer = (props) => {
       <ConsoleHeader channel={props.channel}/>
       <div className="console-body">
         <div className="console-chat">
-          <ConsoleChat
+          <MessageIndex
             currentUser={props.currentUser}
             users={props.users}
             channel={props.channel}

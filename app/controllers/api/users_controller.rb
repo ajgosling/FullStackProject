@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def index
-    @users = Channel.find(params[:channel_id]).users
+    @users = User.all
 
     render "api/users/index"
   end
@@ -10,6 +10,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      Subscription.create(channel_id: 1, user_id: @user.id)
       login(@user)
       render "api/users/show"
     else

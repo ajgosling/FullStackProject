@@ -1,14 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { openChannelInfoModal, closeChannelInfoModal } from '../../actions/ui_actions';
+import {
+  openChannelInfoModal,
+  closeChannelInfoModal,
+  openChannelUsers
+ } from '../../actions/ui_actions';
 
 const mapStateToProps = ( {ui} ) => ({
-  channelInfoOpen: ui.channelInfoOpen
+  channelInfoOpen: ui.channelInfoOpen,
+  channelUsersOpen: ui.channelUsersOpen
 })
 
 const mapDispatchToProps = dispatch => ({
     openChannelInfoModal: () => dispatch(openChannelInfoModal()),
-    closeChannelInfoModal: () => dispatch(closeChannelInfoModal())
+    closeChannelInfoModal: () => dispatch(closeChannelInfoModal()),
+    openChannelUsers: () => dispatch(openChannelUsers())
 
 });
 
@@ -17,6 +23,7 @@ class ConsoleHeader extends React.Component {
     super(props);
 
     this.toggleInfo = this.toggleInfo.bind(this);
+    this.openUsersInfo = this.openUsersInfo.bind(this);
   }
 
   toggleInfo(open) {
@@ -24,6 +31,18 @@ class ConsoleHeader extends React.Component {
       this.props.closeChannelInfoModal();
     } else {
       this.props.openChannelInfoModal();
+    }
+  }
+
+  openUsersInfo() {
+    if (this.props.channelInfoOpen && this.props.channelUsersOpen) {
+    } else if (this.props.channelInfoOpen) {
+      this.props.openChannelUsers();
+    } else if (this.props.channelUsersOpen){
+      this.props.openChannelInfoModal();
+    } else {
+      this.props.openChannelInfoModal()
+      setTimeout(this.props.openChannelUsers, 500)
     }
   }
 
@@ -41,7 +60,10 @@ class ConsoleHeader extends React.Component {
               {this.props.channel.title}
             </div>
 
-            <div className="chat-header-left-people">
+            <div
+              className="chat-header-left-people"
+              onClick={this.openUsersInfo}
+              >
               <img className='duck' src={window.images.duck} />
               {this.props.channel.members.length}
             </div>

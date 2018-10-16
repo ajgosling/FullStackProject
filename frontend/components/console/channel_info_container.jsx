@@ -55,10 +55,14 @@ class ChannelInfoContainer extends React.Component {
     if (!this.props.users[this.props.currentUser]) {
       return null
     }
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    let createdDate = new Date(this.props.channel.created);
+    let dateString = `${months[createdDate.getMonth()]} ${createdDate.getDate()}, ${createdDate.getFullYear()}`
+
     return (
       <div className={`channel-info-container ${modalCollapsed}`}>
         <div className="channel-info-title">
-          <div>About #{this.props.channel.title}</div>
+          <p>About #{this.props.channel.title}</p>
           <button onClick={this.props.closeChannelInfoModal}>
             <i className="fas fa-times"></i>
           </button>
@@ -78,7 +82,7 @@ class ChannelInfoContainer extends React.Component {
             <h2>Purpose</h2>
             <p>{description}</p>
             <h2>Created</h2>
-            <p>Created by {this.props.channel.creator} on {this.props.channel.created}</p>
+            <p>Created by {this.props.channel.creator} on {dateString}</p>
 
           </div>
 

@@ -33,12 +33,20 @@ class MessageForm extends React.Component {
 
   render() {
     return (
-      <form className='message-form'>
-        <textarea value={this.state.body}
-          onChange={this.update}
-          onKeyPress={this.handleKeyPress}
-          placeholder='Message'/>
-      </form>
+      <div className="message-form-container">
+        <button className="message-form-button">
+          G
+        </button>
+        <form className='message-form'>
+          <input value={this.state.body}
+            onChange={this.update}
+            onKeyPress={this.handleKeyPress}
+            placeholder={`Message #${this.props.channel.title}`}/>
+        </form>
+
+      </div>
+
+
     );
   }
 }

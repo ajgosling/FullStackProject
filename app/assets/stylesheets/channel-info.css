@@ -20,13 +20,18 @@
   justify-content: space-between;
   border-bottom: 1px solid lightgray;
   white-space: nowrap;
+
 }
 
-.channel-info-title div {
+.channel-info-title p {
   margin: auto 0;
   margin-left: 10px;
   font-weight: bold;
   font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 240px;
 }
 
 .channel-info-title button {

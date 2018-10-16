@@ -13,7 +13,7 @@ import {
 const _default = {
   channelFormOpen: false,
   channelInfoOpen: true,
-  channelPurposeOpen: true,
+  channelPurposeOpen: false,
   channelUsersOpen: true
 };
 

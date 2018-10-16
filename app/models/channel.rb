@@ -13,7 +13,7 @@
 #
 
 class Channel < ApplicationRecord
-  validates :title, presence: true, length: { maximum: 18 }
+  validates :title, presence: true, length: { maximum: 40 }
   validates :description, length: {maximum: 100 }
   validates :private, inclusion: { in: [true, false]}
   validates :is_direct, inclusion: { in: [true, false]}

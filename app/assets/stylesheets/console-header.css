@@ -23,16 +23,9 @@
 .chat-header-left-people {
   display: flex;
   flex-direction: row;
-  width: 50px;
-  font-size: 14px;
-  color: gray;
-}
-.chat-header-left-people {
-  display: flex;
-  flex-direction: row;
   vertical-align: middle;
-  width: 50px;
   font-size: 15px;
+  width: 40px;
   color: gray;
   transition: all 0.2s ease-in-out;
     -webkit-filter: grayscale(100%);
@@ -41,6 +34,7 @@
 .chat-header-left-people:hover {
   color: #b332a6;
   -webkit-filter: none;
+  cursor: pointer;
 }
 
 .duck {
