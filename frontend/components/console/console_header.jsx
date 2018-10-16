@@ -47,9 +47,9 @@ class ConsoleHeader extends React.Component {
   }
 
   render() {
-    if (!this.props.channel.members) {
-      return null;
-    }
+    // if (!this.props.channel.members) {
+    //   return null;
+    // }
 
     return (
       <div className="chat-header">

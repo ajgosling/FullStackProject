@@ -4,9 +4,19 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import ChannelList from '../channel/channel_list';
 import ChannelForm from '../channel/channel_form';
+import DirectMessageList from '../channel/direct_message_list';
 
 class WorkspaceSidebar extends React.Component {
   render() {
+    const normalChannels = {};
+    const directMessages = {};
+    Object.values(this.props.channels).forEach((channel) => {
+      if (channel.direct) {
+        directMessages[channel.id] = channel
+      } else {
+        normalChannels[channel.id] = channel
+      }
+    })
     return (
       <div className="workspace-sidebar">
         <div className="current-user-info">
@@ -25,18 +35,15 @@ class WorkspaceSidebar extends React.Component {
 
         </div>
         <div className="channels-and-messages">
-          <ChannelList channels={this.props.channels} selectedChannel={this.props.selectedChannel}/>
-          <h1> _ </h1>
-          <h1> _ </h1>
-          <h1> _ </h1>
-          <h1> _ </h1>
-          <div className="direct-list">
-            <ul>
-              <li>I am direct message between trump and russians</li>
-              <li>^wow that's controversial</li>
-              <li>jesus montecristo</li>
-            </ul>
-          </div>
+          <ChannelList
+            channels={normalChannels}
+            selectedChannel={this.props.selectedChannel}
+            />
+
+          <DirectMessageList
+            channels={directMessages}
+            selectedChannel={this.props.selectedChannel}
+            />
         </div>
 
         <ChannelForm />

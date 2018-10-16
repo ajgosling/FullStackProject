@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link }  from 'react-router-dom';
 
-class ChannelListItem extends React.Component {
+class DirectMessageItem extends React.Component {
 
   render() {
     return (
@@ -21,7 +21,6 @@ class ChannelListItem extends React.Component {
       </div>
     );
   }
-
 }
 
-export default ChannelListItem;
+export default DirectMessageItem;

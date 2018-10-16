@@ -65,8 +65,6 @@ class Workspace extends React.Component {
           messages={this.props.messages}
           selectedChannel={this.props.selectedChannel}
           />
-
-
       </div>
     );
   }

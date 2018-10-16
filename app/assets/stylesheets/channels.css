@@ -36,6 +36,9 @@
   padding: 0 5px;
   font-size: 14px;
 }
+.channel-ul {
+  padding-bottom: 15px;
+}
 .channel-li {
   height: 26px;
   max-height: 26px;

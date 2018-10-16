@@ -25,7 +25,6 @@
 .create-channel-form p {
   color: #7b7979;
   margin: 20px 0 0 5px;
-  font-weight: 200;
 }
 
 .form-privacy {
@@ -49,7 +48,6 @@
 .form-privacy aside {
   margin-left: 15px;
   color: #7b7979;
-  font-weight: 200;
 }
 
 .channel-input-container {

@@ -94,7 +94,7 @@ class ChannelInfoContainer extends React.Component {
             onClick={this.toggleUsers}>
             <div className="channel-info-description-left">
               <p><img className='users-duck' src={window.images.duck} /></p>
-              <p> Quackers</p>
+              <p> {this.props.channel.members.length} Honkies</p>
             </div>
 
             <p><i className={`fas fa-caret-down ${usersCollapsed}`}></i></p>
