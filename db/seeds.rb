@@ -5,63 +5,70 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.all.destroy_all
 
-User.create({username: "goose", password: "starwars"})
-User.create({username: "oddish", password: "starwars"})
-User.create({username: "liz", password: "starwars"})
-User.create({username: "aj", password: "starwars"})
+goose = User.create({username: "goose", password: "starwars"})
+oddish = User.create({username: "oddish", password: "starwars"})
+liz = User.create({username: "liz", password: "starwars"})
+aj = User.create({username: "aj", password: "starwars"})
 
-Channel.create({
+Channel.all.destroy_all
+
+general = Channel.create({
   title: "general",
   description: "a general location for quacking it up",
-  creator_id: 1
+  creator_id: goose.id
   })
 
-Channel.create({
+reducks = Channel.create({
   title: "re-ducks",
   description: "The place for birds of a feather to talk about all the new hotness in software",
-  creator_id: 2
+  creator_id: oddish.id
   })
 
-Channel.create({
+quackacademy = Channel.create({
   title: "quack-academy",
   description: "Learn how to be a waterfowl - don't pay anything until you find your first job",
-  creator_id: 3
+  creator_id: liz.id
   })
 
-Subscription.create({user_id: 1, channel_id: 1})
-Subscription.create({user_id: 1, channel_id: 2})
-Subscription.create({user_id: 2, channel_id: 1})
-Subscription.create({user_id: 3, channel_id: 1})
-Subscription.create({user_id: 1, channel_id: 3})
-Subscription.create({user_id: 2, channel_id: 2})
-Subscription.create({user_id: 2, channel_id: 3})
-Subscription.create({user_id: 3, channel_id: 3})
+Subscription.all.destroy_all
+
+Subscription.create({user_id: goose.id, channel_id: general.id})
+Subscription.create({user_id: goose.id, channel_id: reducks.id})
+Subscription.create({user_id: oddish.id, channel_id: general.id})
+Subscription.create({user_id: liz.id, channel_id: general.id})
+Subscription.create({user_id: goose.id, channel_id: quackacademy.id})
+Subscription.create({user_id: oddish.id, channel_id: reducks.id})
+Subscription.create({user_id: oddish.id, channel_id: quackacademy.id})
+Subscription.create({user_id: liz.id, channel_id: quackacademy.id})
+
+Message.all.destroy_all
 
 Message.create({
   body: "I am the first message on quack!",
-  channel_id: 1,
-  user_id: 1
+  channel_id: general.id,
+  user_id: goose.id
   })
 Message.create({
   body: "Wow Look at me go!",
-  channel_id: 1,
-  user_id: 1
+  channel_id: general.id,
+  user_id: goose.id
   })
 Message.create({
   body: "Now its time to test!",
-  channel_id: 1,
-  user_id: 1
+  channel_id: general.id,
+  user_id: goose.id
   })
 
 Message.create({
   body: "This channel has a message!",
-  channel_id: 2,
-  user_id: 1
+  channel_id: reducks.id,
+  user_id: goose.id
   })
 
 Message.create({
   body: "So does this one!",
-  channel_id: 3,
-  user_id: 1
+  channel_id: quackacademy.id,
+  user_id: goose.id
   })

@@ -21,7 +21,6 @@ class ChannelListItem extends React.Component {
       </div>
     );
   }
-
 }
 
 export default ChannelListItem;
