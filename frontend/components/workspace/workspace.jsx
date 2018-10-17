@@ -24,8 +24,6 @@ class Workspace extends React.Component {
       this.props.fetchChannelUsers(channelId),
       this.props.fetchChannelMessages(channelId),
       this.props.createChannelSubscription(channelId, this.props.receiveMessage)
-
-
     ]).then(() => this.setState({
       finished: true
     }))
@@ -33,7 +31,6 @@ class Workspace extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
     if (this.props.match.params.channelId !== nextProps.match.params.channelId) {
       const newChannelId = nextProps.match.params.channelId;
 
@@ -42,7 +39,6 @@ class Workspace extends React.Component {
       this.props.fetchChannelMessages(newChannelId)
       this.props.createChannelSubscription(newChannelId, nextProps.receiveMessage)
     }
-
   }
 
   render() {

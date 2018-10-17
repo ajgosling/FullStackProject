@@ -1,20 +1,35 @@
 .message-index {
   overflow-y: auto;
-  overflow-x: hidden;
-  height: calc(100% - 135px);
+  overflow-xs: hidden;
+  /* height: calc(100% - 40px); */
   width: calc(100% - 27px);
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   padding-left: 25px;
 }
 
-.message-index-item {
-  min-height: 52px;
-  margin-bottom: 8px;
+.test-div {
   display: flex;
-  flex-direction: row;
+  height: auto;
+  /* flex-wrap: wrap; */
 }
 
+.message-index-item {
+  width: 100%;
+  margin-bottom: 8px;
+  display: flex;
+  height: auto;
+  /* overflow: auto; */
+  word-wrap: break-word;
+  max-height: auto;
+
+  /* flex-wrap: wrap; */
+}
+
+.image-holder {
+  height: 100%;
+  display: inline-block;
+}
 .message-profile-image {
   height: 36px;
   width: 36px;
@@ -26,11 +41,12 @@
 
 .message-content {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  overflow: hidden;
+
+
 }
 
 .message-header {

@@ -18,7 +18,10 @@ class MessageIndexItem extends React.Component {
 
     return(
       <li className="message-index-item">
-          <img className="message-profile-image" src={window.images.prof}/>
+        <div className="test-div">
+          <div className="image-holder">
+            <img className="message-profile-image" src={window.images.prof}/>
+          </div>
           <div className="message-content">
             <div className="message-header">
               <span className="message-username">
@@ -35,6 +38,10 @@ class MessageIndexItem extends React.Component {
             </div>
 
           </div>
+
+
+        </div>
+
 
 
       </li>

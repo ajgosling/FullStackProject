@@ -69,7 +69,7 @@
 }
 
 .title-symbol {
-  max-height: 26px; //keeps channel title in line even w lock icon
+  max-height: 26px;
   max-width: 9px;
   margin-right: 7px;
   color: #969096;
@@ -85,4 +85,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 172px;
+}
+
+.dm-dot {
+  margin-right: 4px;
+
 }

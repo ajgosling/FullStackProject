@@ -32,6 +32,20 @@ quackacademy = Channel.create({
   creator_id: liz.id
   })
 
+gooseoddish = Channel.create({
+  title: "goose oddish",
+  description: "Learn how to be a waterfowl - don't pay anything until you find your first job",
+  creator_id: goose.id,
+  is_direct: true
+  })
+
+gooseliz = Channel.create({
+  title: "goose liz",
+  description: "Learn how to be a waterfowl - don't pay anything until you find your first job",
+  creator_id: liz.id,
+  is_direct: true
+  })
+
 Subscription.all.destroy_all
 
 Subscription.create({user_id: goose.id, channel_id: general.id})
@@ -42,6 +56,10 @@ Subscription.create({user_id: goose.id, channel_id: quackacademy.id})
 Subscription.create({user_id: oddish.id, channel_id: reducks.id})
 Subscription.create({user_id: oddish.id, channel_id: quackacademy.id})
 Subscription.create({user_id: liz.id, channel_id: quackacademy.id})
+Subscription.create({user_id: goose.id, channel_id: gooseoddish.id})
+Subscription.create({user_id: oddish.id, channel_id: gooseoddish.id})
+Subscription.create({user_id: goose.id, channel_id: gooseliz.id})
+Subscription.create({user_id: liz.id, channel_id: gooseliz.id})
 
 Message.all.destroy_all
 

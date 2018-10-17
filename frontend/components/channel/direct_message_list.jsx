@@ -21,7 +21,7 @@ class DirectMessageList extends React.Component {
 
         <div className="channel-ul">
           <ul>
-            {Object.values(this.props.channels).map((channel) => <ChannelListItem key={channel.id} channel={channel} selectedChannel={this.props.selectedChannel}/>)}
+            {Object.values(this.props.channels).map((channel) => <DirectMessageItem key={channel.id} channel={channel} selectedChannel={this.props.selectedChannel}/>)}
           </ul>
         </div>
       </div>
