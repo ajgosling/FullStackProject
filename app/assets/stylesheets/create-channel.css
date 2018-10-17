@@ -1,6 +1,6 @@
 .fullscreen {
   position: absolute;
-  height: 100%;
+  height: calc(100% - 100px);
   width: 100%;
   overflow: hidden;
   top: 0;
@@ -8,11 +8,15 @@
   padding-top: 100px;
   background-color: white;
   z-index: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
 }
 
 .create-channel-form {
   width: 650px;
-  margin: 0 auto;
+  margin-left: calc(100% - 650 / 2);
 
 }
 
@@ -93,6 +97,8 @@
   border-radius: 5px;
   color: #7b7979;
   font-weight: bold;
+  box-sizing: border-box;
+  height: 51px;
 }
 
 .cancel-button:hover {
@@ -101,16 +107,85 @@
 }
 
 .submit-button {
+  height: 51px;
   padding: 15px 18px;
   margin-left: 10px;
   background-color: #8862e3;
   border-radius: 5px;
   font-weight: bold;
   color: white;
+  box-sizing: border-box;
+
 
 }
 
 .submit-button:hover {
   background-color: #6743be;
   cursor: pointer;
+}
+
+.channel-form-cancel {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  font-size: 24px;
+  color: lightgray;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+
+}
+.channel-form-icon {
+  color: gray;
+}
+
+.channel-form-cancel:hover {
+  background-color: lightgray;
+  color: black;
+}
+
+.form-esc {
+  font-size: 12px;
+}
+
+.search-users-bar {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.search-users-bar input {
+  height: 40px;
+  width: calc(100% - 100px);
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px 15px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.search-user-results {
+  width: 100%;
+  overflow-y: auto;
+  height: 340px;
+  border-top: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-user-item {
+  border-bottom: 1px solid lightgray;
+  min-height: 40px;
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+  color: black;
+}
+
+.search-user-item:hover {
+  cursor: pointer;
+  background-color: #e2d6ff;
 }

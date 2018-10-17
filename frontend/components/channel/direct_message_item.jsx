@@ -6,7 +6,7 @@ class DirectMessageItem extends React.Component {
   render() {
     let symbol;
     if (this.props.channel.members.length > 2) {
-      symbol = <div className="dm-dot">{this.props.channel.members.length}</div>;
+      symbol = <div className="dm-dot">{this.props.channel.members.length - 1}</div>;
     } else {
       symbol = <img className='online-dot' src={window.images.online} />
     }

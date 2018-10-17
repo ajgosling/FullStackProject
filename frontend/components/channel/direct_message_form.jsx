@@ -1,36 +1,39 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createChannel } from '../../actions/channel_actions';
-import { closeChannelModal } from '../../actions/ui_actions';
+import { closeDirectModal } from '../../actions/ui_actions';
 import { withRouter } from 'react-router-dom'
 
 const mapStateToProps = (state) => ({
   errors: state.errors.channel,
-  title: '',
-  description: '',
   private: false,
-  creator_id: state.session.id,
-  channelFormOpen: state.ui.channelFormOpen
+  currentUser: state.session.id,
+  directFormOpen: state.ui.directFormOpen,
+  users: state.entities.users
+
 });
 
 
 const mapDispatchToProps = dispatch => ({
     createChannel: channel => dispatch( createChannel(channel)),
-    closeChannelModal: () => dispatch(closeChannelModal())
+    closeDirectModal: () => dispatch(closeDirectModal())
 });
 
-class ChannelForm extends React.Component {
+class DirectMessageForm extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       title: this.props.title,
       description: this.props.description,
       private: this.props.private,
-      creator_id: this.props.creator_id
+      creator_id: this.props.currentUser
+      // userIds: {curr: true}
+      }
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    // this.toggleUserInclude = this.toggleUserInclude.bind(this);
   }
 
 
@@ -62,71 +65,80 @@ class ChannelForm extends React.Component {
     );
   }
 
+  // toggleUserInclude(id) {
+  //   const flag = this.state.userIds[id];
+  //   if (flag) {
+  //     // need to remove item from array
+  //     this.setState({
+  //       userIds[id]: undefined
+  //     })
+  //   } else {
+  //     this.setState({
+  //       userIds[id]: true
+  //     })
+  //   }
+  // }
+
   render() {
-    if (this.props.channelFormOpen) {
+
+    // console.log(this.state.userIds);
+    // this.toggleUserInclude(1);
+    // console.log(this.state.userIds);
+
+
+    if (this.props.directFormOpen) {
+      const users = Object.values(this.props.users).map((user) => {
+        if (user.id !== this.props.creator_id) {
+          return (
+            <li
+              key={user.id}
+              className="search-user-item">
+              <img src={window.images.prof} className="user-list-picture"/>
+
+              {user.username}
+            </li>
+          )
+
+        }
+      })
+
+      const selectedUsers = this.state.
       return (
         <div className="fullscreen">
-
           <div className="create-channel-form">
-            <h2>Create a channel</h2>
+            <h2>New Direct Message</h2>
             <p>
-              Channels are where quackers communicate.
-              They're best organized around a topic -
-              #flying-south, for example. Chatting without
-              friends is not all its quacked up to be.
+              Waddle you do without people to chat with?
             </p>
 
             {this.renderErrors()}
 
-            <div className="form-privacy">
-              <button className="private-button">Private</button>
-              <aside>This channel can only be joined or viewed by invite.</aside>
-            </div>
-
-            <label className="channel-input-container">
-              <h3>Title</h3>
+            <div className="search-users-bar">
               <input
                 type="text"
 
                 onChange={this.update("title")}
                 value={this.state.title}
-                placeholder="#  re-ducks"
+                placeholder="search users"
                 />
-            </label>
-            <label className="channel-input-container">
-
-              <div className="purpose-field">
-                <h3>Purpose</h3><aside>(optional)</aside>
-              </div>
-              <input
-                type="text"
-                onChange={this.update("description")}
-                value={this.state.description}
-                placeholder="e.g.  wild goose chases"
-                />
-            </label>
-
-            <div className="channel-form-buttons">
-              <button
-                className="cancel-button"
-                onClick={this.props.closeChannelModal}
-                >Cancel</button>
               <button
                 onClick={this.handleSubmit}
                 className="submit-button">
-                Create Channel
+                Go
               </button>
             </div>
-
+            <div>
+              <ul className="search-user-results">
+                {users}
+              </ul>
+            </div>
           </div>
           <div
             className="channel-form-cancel"
-            onClick={this.props.closeChannelModal}>
+            onClick={this.props.closeDirectModal}>
             <i className="fa fa-times channel-form-icon"></i>
             <div className="form-esc">esc</div>
           </div>
-
-
         </div>
       )
     } else {
@@ -141,4 +153,4 @@ class ChannelForm extends React.Component {
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChannelForm));
+)(DirectMessageForm));

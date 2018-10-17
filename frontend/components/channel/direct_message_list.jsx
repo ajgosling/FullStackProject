@@ -2,11 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import ChannelListItem from './channel_list_item';
 import DirectMessageItem from './direct_message_item';
-import { openChannelModal } from '../../actions/ui_actions';
+import { openDirectModal } from '../../actions/ui_actions';
 
 class DirectMessageList extends React.Component {
   //general is the first channel, otherwise sorted alphabetically
-
 
   render() {
     return (
@@ -15,7 +14,7 @@ class DirectMessageList extends React.Component {
           <div className="channels-title"><h2>Direct Messages</h2></div>
             <button
               className="create-channel-button"
-              onClick={this.props.openChannelModal}
+              onClick={this.props.openDirectModal}
               >&oplus;</button>
         </div>
 
@@ -29,7 +28,6 @@ class DirectMessageList extends React.Component {
                 currentUser={this.props.currentUser}
                 selectedChannel={this.props.selectedChannel}
                 />))}
-            )
           </ul>
         </div>
       </div>
@@ -43,7 +41,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    openChannelModal: () => dispatch(openChannelModal())
+    openDirectModal: () => dispatch(openDirectModal())
 });
 
 export default connect(

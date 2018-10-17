@@ -5,6 +5,7 @@ import { logout } from '../../actions/session_actions';
 import ChannelList from '../channel/channel_list';
 import ChannelForm from '../channel/channel_form';
 import DirectMessageList from '../channel/direct_message_list';
+import DirectMessageForm from '../channel/direct_message_form';
 
 class WorkspaceSidebar extends React.Component {
   render() {
@@ -48,6 +49,7 @@ class WorkspaceSidebar extends React.Component {
         </div>
 
         <ChannelForm />
+        <DirectMessageForm />
       </div>
 
     );

@@ -2,6 +2,8 @@ import merge from 'lodash/merge';
 import {
   OPEN_CHANNEL_MODAL,
   CLOSE_CHANNEL_MODAL,
+  OPEN_DIRECT_MODAL,
+  CLOSE_DIRECT_MODAL,
   OPEN_CHANNEL_INFO_MODAL,
   CLOSE_CHANNEL_INFO_MODAL,
   OPEN_CHANNEL_PURPOSE,
@@ -12,6 +14,7 @@ import {
 
 const _default = {
   channelFormOpen: false,
+  directFormOpen: false,
   channelInfoOpen: true,
   channelPurposeOpen: false,
   channelUsersOpen: true
@@ -24,6 +27,10 @@ const uiReducer = (state = _default, action) => {
       return merge({}, state, { channelFormOpen: true });
     case CLOSE_CHANNEL_MODAL:
       return merge({}, state, { channelFormOpen: false });
+    case OPEN_DIRECT_MODAL:
+      return merge({}, state, { directFormOpen: true });
+    case CLOSE_DIRECT_MODAL:
+      return merge({}, state, { directFormOpen: false });
     case OPEN_CHANNEL_INFO_MODAL:
       return merge({}, state, { channelInfoOpen: true });
     case CLOSE_CHANNEL_INFO_MODAL:
