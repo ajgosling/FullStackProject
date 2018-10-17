@@ -88,6 +88,11 @@
 }
 
 .dm-dot {
-  margin-right: 4px;
-
+  color: #52326b;
+  background-color: lightgray;
+  border-radius: 4px;
+  line-height: 16px;
+  padding: 0 4px;
+  font-weight: bold;
+  opacity: 0.6;
 }

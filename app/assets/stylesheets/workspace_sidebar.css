@@ -103,7 +103,7 @@
 }
 
 .online-dot {
-  margin-right: 4px;
+  margin: 0 4px;
   width: 8px;
   height: 8px;
 }

@@ -43,6 +43,7 @@ class WorkspaceSidebar extends React.Component {
           <DirectMessageList
             channels={directMessages}
             selectedChannel={this.props.selectedChannel}
+
             />
         </div>
 

@@ -1,6 +1,7 @@
 .message-index {
   overflow-y: auto;
   overflow-xs: hidden;
+  min-height: calc(100% - 64px);
   /* height: calc(100% - 40px); */
   width: calc(100% - 27px);
   /* display: flex; */
