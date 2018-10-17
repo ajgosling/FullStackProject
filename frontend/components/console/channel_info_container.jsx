@@ -100,23 +100,16 @@ class ChannelInfoContainer extends React.Component {
             <p><i className={`fas fa-caret-down ${usersCollapsed}`}></i></p>
           </div>
           <div className={`channel-description-content ${usersCollapsed}`}>
-
             <ul>
               {this.props.channel.members.map((userId) => (
                 <li key={userId} className="user-list-element">
-                  <img src={window.images.prof} className="user-list-picture"/>
+                  <img src={this.props.users[userId].imageUrl} className="user-list-picture"/>
                   {this.props.users[userId].username}
                 </li>
               ))}
             </ul>
-
           </div>
-
-
         </div>
-
-
-
       </div>
     )
   }

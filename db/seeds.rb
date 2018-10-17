@@ -7,10 +7,26 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.all.destroy_all
 
-goose = User.create({username: "goose", password: "starwars"})
-oddish = User.create({username: "oddish", password: "starwars"})
-liz = User.create({username: "liz", password: "starwars"})
-aj = User.create({username: "aj", password: "starwars"})
+goose = User.create({
+  username: "goose",
+  password: "starwars",
+  image_url: "https://us.123rf.com/450wm/ksuklein/ksuklein1605/ksuklein160500015/56671561-cartoon-goose-vector-illustration-isolated-duck-on-white-background.jpg?ver=6"
+  })
+oddish = User.create({
+  username: "oddish",
+  password: "starwars",
+  image_url: "https://i.pinimg.com/236x/6e/df/61/6edf61102e0f858b93e779381f004a61--little-tattoos-fangirl.jpg"
+  })
+liz = User.create({
+  username: "liz",
+  password: "starwars",
+  image_url: "https://i.kym-cdn.com/photos/images/original/001/179/537/61e.jpg"
+  })
+aj = User.create({
+  username: "aj",
+  password: "starwars",
+  image_url: "https://vignette.wikia.nocookie.net/teen-titans-go/images/2/2f/Robin.jpg/revision/latest?cb=20150707200119"
+  })
 
 Channel.all.destroy_all
 
@@ -46,6 +62,14 @@ gooseliz = Channel.create({
   is_direct: true
   })
 
+gooselizoddish = Channel.create({
+  title: "goose liz oddish",
+  description: "Learn how to be a waterfowl - don't pay anything until you find your first job",
+  creator_id: goose.id,
+  is_direct: true
+  })
+
+
 Subscription.all.destroy_all
 
 Subscription.create({user_id: goose.id, channel_id: general.id})
@@ -60,7 +84,9 @@ Subscription.create({user_id: goose.id, channel_id: gooseoddish.id})
 Subscription.create({user_id: oddish.id, channel_id: gooseoddish.id})
 Subscription.create({user_id: goose.id, channel_id: gooseliz.id})
 Subscription.create({user_id: liz.id, channel_id: gooseliz.id})
-
+Subscription.create({user_id: goose.id, channel_id: gooselizoddish.id})
+Subscription.create({user_id: oddish.id, channel_id: gooselizoddish.id})
+Subscription.create({user_id: liz.id, channel_id: gooselizoddish.id})
 Message.all.destroy_all
 
 Message.create({

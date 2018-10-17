@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
   title: '',
   description: '',
   private: false,
+  userIds: [],
   creator_id: state.session.id,
   channelFormOpen: state.ui.channelFormOpen
 });

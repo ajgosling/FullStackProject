@@ -20,7 +20,7 @@ class MessageIndexItem extends React.Component {
       <li className="message-index-item">
         <div className="test-div">
           <div className="image-holder">
-            <img className="message-profile-image" src={window.images.prof}/>
+            <img className="message-profile-image" src={user.imageUrl}/>
           </div>
           <div className="message-content">
             <div className="message-header">

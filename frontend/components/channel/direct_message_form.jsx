@@ -23,11 +23,11 @@ class DirectMessageForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.title,
-      description: this.props.description,
+      title: '',
+      description: '',
       private: this.props.private,
       creator_id: this.props.currentUser,
-      userIds: {}
+      userIds: []
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -63,44 +63,58 @@ class DirectMessageForm extends React.Component {
     );
   }
 
-  // toggleUserInclude(id) {
-  //   const flag = this.state.userIds[id];
-  //   if (flag) {
-  //     // need to remove item from array
-  //     this.setState({
-  //       userIds.id: undefined
-  //     })
-  //   } else {
-  //     this.setState({
-  //       userIds.id: true
-  //     })
-  //   }
-  // }
+  toggleUserInclude(id) {
+    const idx = this.state.userIds.indexOf(id)
+    if (idx === -1) {
+      //need to add item to array
+      this.setState({
+        userIds: this.state.userIds.concat([id])
+      })
+    } else {
+      //need to remove item
+      this.setState({
+        userIds: this.state.userIds.filter((_, i) => i !== idx)
+      });
+    }
+  }
 
   render() {
-
-    // console.log(this.state.userIds);
-    // this.toggleUserInclude(1);
-    // console.log(this.state.userIds);
 
 
     if (this.props.directFormOpen) {
       const users = Object.values(this.props.users).map((user) => {
-        if (user.id !== this.props.creator_id) {
+        if (user.id !== this.props.currentUser) {
           return (
             <li
               key={user.id}
-              className="search-user-item">
-              <img src={window.images.prof} className="user-list-picture"/>
+              className="search-user-item"
+              onClick={() => this.toggleUserInclude(user.id)}>
+              <img src={this.props.users[user.id].imageUrl} className="user-list-picture"/>
 
               {user.username}
             </li>
           )
-
         }
+
       })
 
+      const selectedUsers = this.state.userIds.map((id) => {
+        const user = this.props.users[id]
+        return (
+          <div
+            key={id}
+            className="selected-user-item"
+            onClick={() => this.toggleUserInclude(user.id)}
+            >
+            {user.username}
+            <i className="fas fa-times"></i>
 
+
+          </div>
+        )
+      })
+
+      console.log(this.state.userIds);
       return (
         <div className="fullscreen">
           <div className="create-channel-form">
@@ -124,6 +138,9 @@ class DirectMessageForm extends React.Component {
                 className="submit-button">
                 Go
               </button>
+            </div>
+            <div className= "selected-user-list">
+              {selectedUsers}
             </div>
             <div>
               <ul className="search-user-results">
