@@ -9,6 +9,14 @@ class MessageIndex extends React.Component {
     this.renderMessages = this.renderMessages.bind(this);
   }
 
+  componentDidMount() {
+    this.scrollToBottom();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.scrollToBottom();
+  }
+
   renderMessages() {
     let messages = [];
     Object.values(this.props.messages).forEach((message) => {
@@ -24,6 +32,14 @@ class MessageIndex extends React.Component {
     return messages;
 
 
+  }
+  scrollToBottom() {
+    const messageIndex = document.querySelector('.message-index');
+    messageIndex.scrollTop = messageIndex.scrollHeight;
+    setTimeout(function () {
+      const messageIndex = document.querySelector('.message-index');
+      messageIndex.scrollTop = messageIndex.scrollHeight;
+    }, 0);
   }
   render() {
     if (!this.props.messages) {

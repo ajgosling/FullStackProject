@@ -23,7 +23,11 @@ class ConsoleHeader extends React.Component {
     super(props);
 
     this.toggleInfo = this.toggleInfo.bind(this);
+    this.toggleDarkMode = this.toggleDarkMode.bind(this);
     this.openUsersInfo = this.openUsersInfo.bind(this);
+    this.state = {
+      darkMode: false
+    }
   }
 
   toggleInfo(open) {
@@ -46,14 +50,39 @@ class ConsoleHeader extends React.Component {
     }
   }
 
+  toggleDarkMode() {
+    if (this.state.darkMode) {
+      this.setState({
+        darkMode: false
+      })
+    } else {
+      this.setState({
+        darkMode: true
+      })
+    }
+
+  }
   render() {
     // if (!this.props.channel.members) {
     //   return null;
     // }
+    let dark;
+    if (this.state.darkMode) {
+      dark = <div className="darkness">
+        <p className="darkness-text">
+          JEREMIAH NEEDS A HAIRCUT
 
+        </p>
+        <img src={window.images.ryan} />
+
+      </div>
+    } else {
+      dark = null;
+    }
     return (
-      <div className="chat-header">
 
+      <div className="chat-header">
+        {dark}
         <div className="chat-header-title">
           <div className="chat-header-left">
             <div className="chat-header-title">
@@ -73,6 +102,11 @@ class ConsoleHeader extends React.Component {
         </div>
 
         <div className="chat-header-right">
+          <button
+            onClick={this.toggleDarkMode}
+            className={this.state.darkMode ? "light-mode-button" : "dark-mode-button"}>
+            {this.state.darkMode ? "Woah, too dark" : "Dark Mode?"}
+          </button>
           <button
             onClick={() => this.toggleInfo(this.props.channelInfoOpen)}>
 

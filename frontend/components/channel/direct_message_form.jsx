@@ -22,14 +22,12 @@ const mapDispatchToProps = dispatch => ({
 class DirectMessageForm extends React.Component {
   constructor(props) {
     super(props);
-    
     this.state = {
       title: this.props.title,
       description: this.props.description,
       private: this.props.private,
-      creator_id: this.props.currentUser
-      // userIds: {curr: true}
-      }
+      creator_id: this.props.currentUser,
+      userIds: {}
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -70,11 +68,11 @@ class DirectMessageForm extends React.Component {
   //   if (flag) {
   //     // need to remove item from array
   //     this.setState({
-  //       userIds[id]: undefined
+  //       userIds.id: undefined
   //     })
   //   } else {
   //     this.setState({
-  //       userIds[id]: true
+  //       userIds.id: true
   //     })
   //   }
   // }
@@ -102,7 +100,7 @@ class DirectMessageForm extends React.Component {
         }
       })
 
-      const selectedUsers = this.state.
+
       return (
         <div className="fullscreen">
           <div className="create-channel-form">
