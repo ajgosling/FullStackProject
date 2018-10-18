@@ -90,7 +90,7 @@ class MessageForm extends React.Component {
           },
           searchBar: {
             'borderRadius': '5px',
-            'border': '1px solid lightgray'
+            'border': '1px solid '
           },
 
         }}

@@ -33,7 +33,22 @@ class SessionForm extends React.Component {
 
   handleDemoLogin(e) {
     e.preventDefault();
-    this.props.demoLogin();
+    setTimeout(() => this.setState({username: "g"}), 100)
+    setTimeout(() => this.setState({username: "go"}), 200)
+    setTimeout(() => this.setState({username: "goo"}), 300)
+    setTimeout(() => this.setState({username: "goos"}), 400)
+    setTimeout(() => this.setState({username: "goose"}), 500)
+
+    setTimeout(() => this.setState({password: "s"}), 800)
+    setTimeout(() => this.setState({password: "st"}), 900)
+    setTimeout(() => this.setState({password: "sta"}), 1000)
+    setTimeout(() => this.setState({password: "star"}), 1100)
+    setTimeout(() => this.setState({password: "starw"}), 1200)
+    setTimeout(() => this.setState({password: "starwa"}), 1300)
+    setTimeout(() => this.setState({password: "starwar"}), 1400)
+    setTimeout(() => this.setState({password: "starwars"}), 1500)
+
+    setTimeout(this.props.demoLogin, 1800)
 
   }
 
@@ -78,7 +93,7 @@ class SessionForm extends React.Component {
             />
             <br />
             <input
-              type="text"
+              type="password"
               className="user-input"
               placeholder="password"
               value={this.state.password}

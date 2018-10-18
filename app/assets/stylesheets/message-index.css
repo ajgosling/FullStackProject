@@ -75,8 +75,10 @@
   line-height: 1.5;
 }
 
-.message-giphy {
+.message-gif {
   border-left: 2px solid lightpink;
+  pointer-events: none;
+
 }
 
 .message-image {

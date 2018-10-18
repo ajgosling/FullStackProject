@@ -23,7 +23,7 @@ class MessageIndexItem extends React.Component {
 
     //gif
     } else if (message.body.includes('giphy')) {
-      body = <iframe src={message.body} width="420" height="280" frameBorder="0" className="message-giphy"></iframe>;
+      body = <iframe src={message.body} className="message-gif" width="420" height="280" frameBorder="0" ></iframe>;
 
     //message
     } else {

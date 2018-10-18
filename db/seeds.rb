@@ -10,7 +10,7 @@ User.all.destroy_all
 goose = User.create({
   username: "goose",
   password: "starwars",
-  image_url: "https://i.imgur.com/NGyPZ1W.jpg"
+  image_url: "https://cdn.bulbagarden.net/upload/thumb/5/53/054Psyduck.png/1200px-054Psyduck.png"
   })
 oddish = User.create({
   username: "oddish",
@@ -25,8 +25,48 @@ liz = User.create({
 carly = User.create({
   username: "carly",
   password: "starwars",
-  image_url: "https://vignette.wikia.nocookie.net/teen-titans-go/images/2/2f/Robin.jpg/revision/latest?cb=20150707200119"
+  image_url: "https://secure.gravatar.com/avatar/123abcd123bc12b3c.jpg?s=512&d=https%3A%2F%2Fa.slack-edge.com%2F7fa9%2Fimg%2Favatars%2Fava_0000-512.png"
   })
+jeremiah = User.create({
+  username: "baby J",
+  password: "starwars",
+  image_url: "https://ca.slack-edge.com/T03GU501J-UBR2682L9-1b552c31cbb5-1024"
+
+  })
+alejandro = User.create({
+  username: "alejandro",
+  password: "starwars",
+  image_url: "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Batman-BenAffleck.jpg/200px-Batman-BenAffleck.jpg"
+  })
+derek = User.create({
+  username: "derek",
+  password: "starwars",
+  image_url: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/15/14/lebron-0.jpg?w968h681"
+
+  })
+tomcruise = User.create({
+  username: "tom cruise",
+  password: "starwars",
+  image_url: "https://akns-images.eonline.com/eol_images/Entire_Site/2018431/rs_600x600-180531053118-600.tom-cruise.53118.jpg?fit=around|700:700&crop=700:700;center,top&output-quality=90"
+  })
+iroh = User.create({
+  username: "uncle iroh",
+  password: "starwars",
+  image_url: "https://pbs.twimg.com/profile_images/584121394407047169/8VkAXjot_400x400.jpg"
+  })
+
+saitama = User.create({
+  username: "saitama",
+  password: "starwars",
+  image_url: "http://cdn.shopify.com/s/files/1/1158/9490/products/C000009037-PAR-ZOOM_0236d34d-459c-4750-8edc-c4686f93d23d_800x.jpg?v=1524081408"
+  })
+
+l = User.create({
+  username: "L",
+  password: "starwars",
+  image_url: "https://i.ebayimg.com/images/g/n90AAOSwVKRaJSe9/s-l300.jpg"
+  })
+
 
 Channel.all.destroy_all
 
@@ -73,12 +113,19 @@ gooselizoddish = Channel.create({
 Subscription.all.destroy_all
 
 Subscription.create({user_id: goose.id, channel_id: general.id})
-Subscription.create({user_id: goose.id, channel_id: reducks.id})
 Subscription.create({user_id: oddish.id, channel_id: general.id})
 Subscription.create({user_id: liz.id, channel_id: general.id})
 Subscription.create({user_id: carly.id, channel_id: general.id})
-Subscription.create({user_id: goose.id, channel_id: quackacademy.id})
+Subscription.create({user_id: jeremiah.id, channel_id: general.id})
+Subscription.create({user_id: alejandro.id, channel_id: general.id})
+Subscription.create({user_id: derek.id, channel_id: general.id})
+Subscription.create({user_id: tomcruise.id, channel_id: general.id})
+Subscription.create({user_id: iroh.id, channel_id: general.id})
+Subscription.create({user_id: saitama.id, channel_id: general.id})
+Subscription.create({user_id: l.id, channel_id: general.id})
+Subscription.create({user_id: goose.id, channel_id: reducks.id})
 Subscription.create({user_id: oddish.id, channel_id: reducks.id})
+Subscription.create({user_id: goose.id, channel_id: quackacademy.id})
 Subscription.create({user_id: oddish.id, channel_id: quackacademy.id})
 Subscription.create({user_id: liz.id, channel_id: quackacademy.id})
 Subscription.create({user_id: goose.id, channel_id: gooseoddish.id})
