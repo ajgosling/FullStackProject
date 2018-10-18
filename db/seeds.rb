@@ -45,7 +45,7 @@ derek = User.create({
 
   })
 tomcruise = User.create({
-  username: "tom cruise",
+  username: "Maverick",
   password: "starwars",
   image_url: "https://akns-images.eonline.com/eol_images/Entire_Site/2018431/rs_600x600-180531053118-600.tom-cruise.53118.jpg?fit=around|700:700&crop=700:700;center,top&output-quality=90"
   })
@@ -82,6 +82,11 @@ reducks = Channel.create({
   creator_id: oddish.id
   })
 
+topgun = Channel.create({
+  title: "Top Gun",
+  description: "welcome to flight school",
+  creator_id: goose.id
+  })
 quackacademy = Channel.create({
   title: "quack-academy",
   description: "Learn how to be a waterfowl - don't pay anything until you find your first job",
@@ -135,6 +140,9 @@ Subscription.create({user_id: liz.id, channel_id: gooseliz.id})
 Subscription.create({user_id: goose.id, channel_id: gooselizoddish.id})
 Subscription.create({user_id: oddish.id, channel_id: gooselizoddish.id})
 Subscription.create({user_id: liz.id, channel_id: gooselizoddish.id})
+Subscription.create({user_id: goose.id, channel_id: topgun.id})
+Subscription.create({user_id: tomcruise.id, channel_id: topgun.id})
+
 Message.all.destroy_all
 
 Message.create({
