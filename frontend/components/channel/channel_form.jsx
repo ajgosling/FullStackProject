@@ -9,7 +9,6 @@ const mapStateToProps = (state) => ({
   title: '',
   description: '',
   private: false,
-  userIds: [],
   creator_id: state.session.id,
   channelFormOpen: state.ui.channelFormOpen
 });
@@ -28,7 +27,8 @@ class ChannelForm extends React.Component {
       title: this.props.title,
       description: this.props.description,
       private: this.props.private,
-      creator_id: this.props.creator_id
+      creator_id: this.props.creator_id,
+      ids: [this.props.creator_id],
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);

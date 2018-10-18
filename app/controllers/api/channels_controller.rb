@@ -14,9 +14,15 @@ class Api::ChannelsController < ApplicationController
   end
 
   def create
-    @channel = Channel.new(channel_params)
+    my_params = channel_params
+    ids = my_params[:ids]
+    my_params.delete(:ids)
+    @channel = Channel.new(my_params)
+
     if @channel.save
-      Subscription.create(channel_id: @channel.id, user_id: @channel.creator_id)
+      ids.each do |id|
+        Subscription.create(channel_id: @channel.id, user_id: id)
+      end
       render "api/channels/show"
     else
       render json: @channel.errors.full_messages, status: 422
@@ -34,6 +40,6 @@ class Api::ChannelsController < ApplicationController
   private
 
   def channel_params
-    params.require(:channel).permit(:title, :description, :private, :is_direct, :creator_id)
+    params.require(:channel).permit(:title, :description, :private, :is_direct, :creator_id, :ids => [])
   end
 end

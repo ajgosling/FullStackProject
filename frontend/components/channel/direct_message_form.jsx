@@ -23,15 +23,18 @@ class DirectMessageForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
+      title: 'directs',
       description: '',
       private: this.props.private,
+      is_direct: true,
       creator_id: this.props.currentUser,
-      userIds: []
+      ids: [this.props.currentUser],
+      searchInput: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.toggleUserInclude = this.toggleUserInclude.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
   }
 
 
@@ -41,16 +44,28 @@ class DirectMessageForm extends React.Component {
     });
   }
 
+  changeSearch() {
+    return e => this.setState({
+      searchInput: e.currentTarget.value
+    });
+  }
+
+
   handleSubmit() {
     this.props.createChannel(this.state)
       .then((res) => this.props.history.push(`/channels/${res.payload.channel.id}`))
-      .then(() => this.props.closeChannelModal())
-    this.setState({
-      title: '',
-      description: ''
+      .then(() => this.props.closeDirectModal())
     })
   }
-
+  handleClose() {
+    this.setState({
+      title: 'direct',
+      description: '',
+      searchInput: '',
+      ids: [this.props.currentUser]
+    })
+    this.props.closeDirectModal()
+  }
   renderErrors() {
     return(
       <ul className="session-errors">
@@ -64,16 +79,16 @@ class DirectMessageForm extends React.Component {
   }
 
   toggleUserInclude(id) {
-    const idx = this.state.userIds.indexOf(id)
+    const idx = this.state.ids.indexOf(id)
     if (idx === -1) {
       //need to add item to array
       this.setState({
-        userIds: this.state.userIds.concat([id])
+        ids: this.state.ids.concat([id])
       })
     } else {
       //need to remove item
       this.setState({
-        userIds: this.state.userIds.filter((_, i) => i !== idx)
+        ids: this.state.ids.filter((_, i) => i !== idx)
       });
     }
   }
@@ -82,7 +97,11 @@ class DirectMessageForm extends React.Component {
 
 
     if (this.props.directFormOpen) {
-      const users = Object.values(this.props.users).map((user) => {
+      const searchedUsers = Object.values(this.props.users).filter((user) => (
+        user.username.includes(this.state.searchInput)
+      ))
+
+      const users = searchedUsers.map((user) => {
         if (user.id !== this.props.currentUser) {
           return (
             <li
@@ -98,23 +117,24 @@ class DirectMessageForm extends React.Component {
 
       })
 
-      const selectedUsers = this.state.userIds.map((id) => {
+      const selectedUsers = this.state.ids.map((id) => {
         const user = this.props.users[id]
-        return (
-          <div
-            key={id}
-            className="selected-user-item"
-            onClick={() => this.toggleUserInclude(user.id)}
-            >
-            {user.username}
-            <i className="fas fa-times"></i>
+        if (id !== this.props.currentUser) {
+          return (
+            <div
+              key={id}
+              className="selected-user-item"
+              onClick={() => this.toggleUserInclude(user.id)}
+              >
+              {user.username}
+              <i className="fas fa-times"></i>
 
 
-          </div>
-        )
+            </div>
+          )
+        }
+
       })
-
-      console.log(this.state.userIds);
       return (
         <div className="fullscreen">
           <div className="create-channel-form">
@@ -129,8 +149,8 @@ class DirectMessageForm extends React.Component {
               <input
                 type="text"
 
-                onChange={this.update("title")}
-                value={this.state.title}
+                onChange={this.changeSearch()}
+                value={this.state.searchInput}
                 placeholder="search users"
                 />
               <button

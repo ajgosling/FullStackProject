@@ -114,14 +114,8 @@
   justify-content: center;
 }
 
-.darkness-text {
-  margin: 0 auto;
-  margin-top: 50px;
-  text-align: center;
-  width: 600px;
-}
 
 .darkness img {
-  width: 300px;
+  width: 400px;
   margin: 20px auto;
 }
