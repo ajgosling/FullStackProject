@@ -68,18 +68,19 @@
 .dark-mode-button {
   height: 30px;
   padding: 0 3px;
-  margin-left: 10px;
+  margin: 0 10px;
   background-color: #8862e3;
   border-radius: 5px;
   font-weight: bold;
   color: white;
   box-sizing: border-box;
-
+  transition: all 0.2s ease-in-out;
 
 }
 
 .dark-mode-button:hover {
   cursor: pointer;
+  background-color: black;
 }
 
 .light-mode-button {

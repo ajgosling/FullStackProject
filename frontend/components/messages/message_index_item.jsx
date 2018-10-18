@@ -15,7 +15,20 @@ class MessageIndexItem extends React.Component {
     const message = this.props.message;
     const user = this.props.users[message.userId];
     const messageTime = this.formatTime(new Date(message.created));
+    let body;
 
+    //image
+    if (message.body.match(/\.(jpeg|jpg|gif|png)$/) != null) {
+      body = <img src={message.body} className="message-image"/>
+
+    //gif
+    } else if (message.body.includes('giphy')) {
+      body = <iframe src={message.body} width="420" height="280" frameBorder="0" className="message-giphy"></iframe>;
+
+    //message
+    } else {
+      body = message.body;
+    }
     return(
       <li className="message-index-item">
         <div className="test-div">
@@ -34,7 +47,7 @@ class MessageIndexItem extends React.Component {
 
             </div>
             <div className="message-body">
-              {message.body}
+              {body}
             </div>
 
           </div>

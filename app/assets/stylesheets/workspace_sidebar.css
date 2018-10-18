@@ -7,7 +7,7 @@
 .channels-and-messages {
   width: 220px;
   height: 100%;
-  background-color: #52326b;
+  background-color: #51397e;
   font-weight: 300;
   font-size: 16px;
   overflow: hidden;
@@ -31,7 +31,7 @@
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: #3f2652;
+    background: #8862e3;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
     opacity: 0.5;
 }
@@ -44,7 +44,7 @@
   width: 193px;
   padding: 12px 12px 0 15px;
   transition: all 0.2s ease-in-out;
-  background-color: #52326b;
+  background-color: #51397e;
 
   position: absolute;
   top: 0;

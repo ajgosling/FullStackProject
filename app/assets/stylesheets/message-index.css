@@ -74,3 +74,14 @@
 .message-body {
   line-height: 1.5;
 }
+
+.message-giphy {
+  border-left: 2px solid lightpink;
+}
+
+.message-image {
+  max-height: 400px;
+  max-width: 500px;
+  height: auto;
+  width: auto;
+}

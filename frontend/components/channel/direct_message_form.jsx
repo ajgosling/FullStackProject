@@ -23,7 +23,7 @@ class DirectMessageForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: 'directs',
+      title: 'direct',
       description: '',
       private: this.props.private,
       is_direct: true,
@@ -55,7 +55,7 @@ class DirectMessageForm extends React.Component {
     this.props.createChannel(this.state)
       .then((res) => this.props.history.push(`/channels/${res.payload.channel.id}`))
       .then(() => this.props.closeDirectModal())
-    })
+
   }
   handleClose() {
     this.setState({
@@ -170,7 +170,7 @@ class DirectMessageForm extends React.Component {
           </div>
           <div
             className="channel-form-cancel"
-            onClick={this.props.closeDirectModal}>
+            onClick={this.handleClose}>
             <i className="fa fa-times channel-form-icon"></i>
             <div className="form-esc">esc</div>
           </div>

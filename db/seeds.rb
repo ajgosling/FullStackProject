@@ -10,7 +10,7 @@ User.all.destroy_all
 goose = User.create({
   username: "goose",
   password: "starwars",
-  image_url: "https://us.123rf.com/450wm/ksuklein/ksuklein1605/ksuklein160500015/56671561-cartoon-goose-vector-illustration-isolated-duck-on-white-background.jpg?ver=6"
+  image_url: "https://i.imgur.com/NGyPZ1W.jpg"
   })
 oddish = User.create({
   username: "oddish",

@@ -1,14 +1,20 @@
 import React from 'react';
+import GiphySearch from 'react-giphy-search';
 
 class MessageForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.state.body = '';
-    this.state.user_id = props.currentUser.id
-    this.state.channel_id = props.channel.id
+    this.state = {
+      body: '',
+      user_id: props.currentUser.id,
+      channel_id: props.channel.id,
+      searchGif: false
+
+    };
     this.update = this.update.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.toggleGif = this.toggleGif.bind(this);
+    this.handleGif = this.handleGif.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -31,12 +37,64 @@ class MessageForm extends React.Component {
     }
   }
 
+  toggleGif() {
+    this.setState({
+      searchGif: !this.state.searchGif
+    })
+  }
+
+  handleGif(id) {
+    this.setState({body: `https://giphy.com/embed/${id}`});
+    App[this.props.channel.id].speak(this.state);
+    this.toggleGif();
+  }
+
   render() {
+    let gif;
+    if(this.state.searchGif) {
+      gif = <GiphySearch
+        onGifSelection={(id) => this.handleGif(id)}
+        styles={{
+          wrapper: {
+            'width': '666px',
+            'height': '50%',
+            'maxWidth': '100%',
+            'paddingTop': '5px',
+            'paddingBottom': '5px',
+            'paddingLeft': '10px',
+            'backgroundColor': 'white',
+            'position': 'absolute',
+            'left': '240px',
+            'bottom': '70px',
+            'borderRadius': '5px',
+            'zIndex': '90',
+            'border': '1px solid lightgray'
+          },
+          gifList: {
+            'borderRadius': '5px',
+            'display': 'flex',
+            'flexWrap': 'wrap',
+            'overflowX': 'hidden',
+            'overflowY': 'auto'
+          },
+          gifListItem: {
+            'paddingRight': '7px'
+          },
+          searchBar: {
+            'borderRadius': '5px'
+          },
+
+        }}
+      />;
+    } else {
+    gif = null;
+    }
     return (
       <div className="message-form-container">
-        <button className="message-form-button">
-          G
-        </button>
+        {gif}
+        <div className='gif-button' onClick={this.toggleGif}>
+          GIF
+        </div>
         <form className='message-form'>
           <input value={this.state.body}
             onChange={this.update}
