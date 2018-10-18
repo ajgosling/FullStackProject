@@ -32,7 +32,9 @@ class MessageForm extends React.Component {
 
   handleKeyPress(e) {
     if (e.key === 'Enter' && !e.shiftKey) {
-      App[this.props.channel.id].speak(this.state);
+      let submitState = this.state;
+      delete submitState.searchGif;
+      App[this.props.channel.id].speak(submitState);
       this.setState({body: ''});
     }
   }
@@ -44,9 +46,15 @@ class MessageForm extends React.Component {
   }
 
   handleGif(id) {
-    this.setState({body: `https://giphy.com/embed/${id}`});
-    App[this.props.channel.id].speak(this.state);
+    let submitState = {
+      body: `https://giphy.com/embed/${id}`,
+      user_id: this.state.user_id,
+      channel_id: this.state.channel_id
+
+    };
+    App[this.props.channel.id].speak(submitState);
     this.toggleGif();
+
   }
 
   render() {
@@ -81,7 +89,8 @@ class MessageForm extends React.Component {
             'paddingRight': '7px'
           },
           searchBar: {
-            'borderRadius': '5px'
+            'borderRadius': '5px',
+            'border': '1px solid lightgray'
           },
 
         }}

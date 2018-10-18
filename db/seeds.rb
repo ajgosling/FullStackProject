@@ -22,8 +22,8 @@ liz = User.create({
   password: "starwars",
   image_url: "https://i.kym-cdn.com/photos/images/original/001/179/537/61e.jpg"
   })
-aj = User.create({
-  username: "aj",
+carly = User.create({
+  username: "carly",
   password: "starwars",
   image_url: "https://vignette.wikia.nocookie.net/teen-titans-go/images/2/2f/Robin.jpg/revision/latest?cb=20150707200119"
   })
@@ -76,6 +76,7 @@ Subscription.create({user_id: goose.id, channel_id: general.id})
 Subscription.create({user_id: goose.id, channel_id: reducks.id})
 Subscription.create({user_id: oddish.id, channel_id: general.id})
 Subscription.create({user_id: liz.id, channel_id: general.id})
+Subscription.create({user_id: aj.id, channel_id: general.id})
 Subscription.create({user_id: goose.id, channel_id: quackacademy.id})
 Subscription.create({user_id: oddish.id, channel_id: reducks.id})
 Subscription.create({user_id: oddish.id, channel_id: quackacademy.id})
