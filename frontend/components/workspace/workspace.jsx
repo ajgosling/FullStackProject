@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import WorkspaceSidebar from './workspace_sidebar';
 import ConsoleContainer from '../console/console_container';
 import { logout } from '../../actions/session_actions';
-import { fetchChannels, fetchChannel, createChannelSubscription } from '../../actions/channel_actions';
+import { fetchChannels, fetchChannel, createSubscription, createChannelSubscription } from '../../actions/channel_actions';
 import { fetchChannelUsers } from '../../actions/user_actions';
 import { fetchChannelMessages, receiveMessage } from '../../actions/message_actions';
 
@@ -60,6 +60,7 @@ class Workspace extends React.Component {
           channel={this.props.channels[this.props.selectedChannel]}
           messages={this.props.messages}
           selectedChannel={this.props.selectedChannel}
+          createSubscription={this.props.createSubscription}
           />
       </div>
     );
@@ -85,6 +86,7 @@ const mapDispatchToProps = (dispatch) => {
   logout: () => dispatch(logout()),
   receiveMessage: (message) => dispatch(receiveMessage(message)),
   fetchChannelMessages: (id) => dispatch(fetchChannelMessages(id)),
+  createSubscription: (id) => dispatch(createSubscription(id)),
   createChannelSubscription: (channelId, receiveMessage) => (dispatch(createChannelSubscription(channelId, receiveMessage)))
   };
 };

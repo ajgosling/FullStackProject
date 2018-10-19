@@ -1,4 +1,6 @@
 import * as ChannelApiUtil from '../util/channel_api_util';
+import * as SubscriptionApiUtil from '../util/subscription_api_util';
+
 import { receiveMessage } from './message_actions';
 
 export const RECEIVE_CHANNELS = 'RECEIVE_CHANNELS';
@@ -58,6 +60,34 @@ export const createChannel = (channel) => (dispatch) => {
   );
 };
 
+//new user channel member
+export const createSubscription = (id) => (dispatch) => {
+  return (SubscriptionApiUtil.ajaxCreateSubscription(id)
+    .then((channel) => {
+      return (
+        dispatch(receiveChannel(channel))
+      )
+    }, err => (
+      dispatch(receiveChannelErrors(err.responseJSON))
+    ))
+  );
+};
+
+//delete user channel member
+export const deleteSubscription = (channelId) => (dispatch) => {
+  return (SubscriptionApiUtil.ajaxDeleteSubscription(channelId)
+    .then((channel) => {
+      return (
+        dispatch(receiveChannel(channel))
+      )
+    }, err => (
+      dispatch(receiveChannelErrors(err.responseJSON))
+    ))
+  );
+};
+
+
+//makes new action cable link
 export const createChannelSubscription = (channelId, receiveMessage) => dispatch => {
   App[channelId] = App.cable.subscriptions.create(
     {channel: "MainChannel", id: channelId},

@@ -98,24 +98,30 @@ class MessageForm extends React.Component {
     } else {
     gif = null;
     }
-    return (
-      <div className="message-form-container">
-        {gif}
-        <div className='gif-button' onClick={this.toggleGif}>
-          GIF
+
+    if (this.props.channel.members.includes(this.props.currentUser.id)) {
+      return (
+        <div className="message-form-container">
+          {gif}
+          <div className='gif-button' onClick={this.toggleGif}>
+            GIF
+          </div>
+          <form className='message-form'>
+            <input value={this.state.body}
+              onChange={this.update}
+              onKeyPress={this.handleKeyPress}
+              placeholder={`Message #${this.props.channel.title}`}/>
+          </form>
         </div>
-        <form className='message-form'>
-          <input value={this.state.body}
-            onChange={this.update}
-            onKeyPress={this.handleKeyPress}
-            placeholder={`Message #${this.props.channel.title}`}/>
-        </form>
-
-
-      </div>
-
-
-    );
+      );
+    } else {
+      return (
+        <div className='join-channel-button'
+          onClick={() => this.props.createSubscription(this.props.channel.id)}>
+          JOIN CHANNEL
+        </div>
+      )
+    }
   }
 }
 

@@ -68,7 +68,7 @@
 .dark-mode-button {
   height: 30px;
   padding: 0 3px;
-  margin: 0 10px;
+  margin-right: 10px;
   background-color: #8862e3;
   border-radius: 5px;
   font-weight: bold;
@@ -119,4 +119,22 @@
 .darkness img {
   width: 400px;
   margin: 20px auto;
+}
+
+.leave-channel-button {
+  height: 30px;
+  padding: 0 3px;
+  margin-left: 10px;
+  background-color: #2e8f63;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+
+}
+
+.leave-channel-button:hover {
+  cursor: pointer;
+  background-color: black;
 }

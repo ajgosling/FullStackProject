@@ -13,7 +13,9 @@ class WorkspaceSidebar extends React.Component {
     const directMessages = {};
     Object.values(this.props.channels).forEach((channel) => {
       if (channel.direct) {
-        directMessages[channel.id] = channel
+        if (channel.members.includes(this.props.currentUser.id)) {
+          directMessages[channel.id] = channel
+        }
       } else {
         normalChannels[channel.id] = channel
       }

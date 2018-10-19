@@ -58,3 +58,23 @@
   background-color: #6743be;
   cursor: pointer;
 }
+
+.join-channel-button {
+  width: calc(100% - 40px);
+  min-height: 40px;
+  margin: 0 12px 20px 18px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+  background-color: #3aa373;
+  color: white;
+  font-weight: bold;
+}
+
+.join-channel-button:hover {
+  background-color: #2e8f63;
+  cursor: pointer;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+}

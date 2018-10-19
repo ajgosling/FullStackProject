@@ -6,15 +6,21 @@ import {
   openChannelUsers
  } from '../../actions/ui_actions';
 
-const mapStateToProps = ( {ui} ) => ({
-  channelInfoOpen: ui.channelInfoOpen,
-  channelUsersOpen: ui.channelUsersOpen
+ import {
+   deleteSubscription
+ } from '../../actions/channel_actions';
+
+const mapStateToProps = ( state ) => ({
+  channelInfoOpen: state.ui.channelInfoOpen,
+  channelUsersOpen: state.ui.channelUsersOpen,
+  currentUser: state.session.id
 })
 
 const mapDispatchToProps = dispatch => ({
     openChannelInfoModal: () => dispatch(openChannelInfoModal()),
     closeChannelInfoModal: () => dispatch(closeChannelInfoModal()),
-    openChannelUsers: () => dispatch(openChannelUsers())
+    openChannelUsers: () => dispatch(openChannelUsers()),
+    deleteSubscription: (id) => dispatch(deleteSubscription(id))
 
 });
 
@@ -75,6 +81,19 @@ class ConsoleHeader extends React.Component {
     } else {
       dark = null;
     }
+
+    let leaveChannel;
+    if (this.props.channel.members.includes(this.props.currentUser)) {
+      leaveChannel = <button
+        className="leave-channel-button"
+        onClick={() => this.props.deleteSubscription(this.props.channel.id)}
+        >
+        Leave Channel
+
+      </button>
+    } else {
+      leaveChannel = null;
+    }
     return (
 
       <div className="chat-header">
@@ -99,18 +118,17 @@ class ConsoleHeader extends React.Component {
 
         <div className="chat-header-right">
           <button
-            onClick={this.toggleDarkMode}
-            className={this.state.darkMode ? "light-mode-button" : "dark-mode-button"}>
-            {this.state.darkMode ? "Woah, too dark" : "Dark Mode?"}
-          </button>
-          <button
             onClick={() => this.toggleInfo(this.props.channelInfoOpen)}>
 
             <i className="fas fa-info-circle"></i>
           </button>
-          <button>
-            <i className="fas fa-cogs"></i>
+          <button
+            onClick={this.toggleDarkMode}
+            className={this.state.darkMode ? "light-mode-button" : "dark-mode-button"}>
+            {this.state.darkMode ? "Woah, too dark" : "Dark Mode?"}
           </button>
+
+          {leaveChannel}
 
 
         </div>

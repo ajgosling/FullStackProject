@@ -20,7 +20,9 @@ const ConsoleContainer = (props) => {
             />
           <MessageForm
             currentUser={props.currentUser}
-            channel={props.channel}/>
+            channel={props.channel}
+            createSubscription={props.createSubscription}
+            />
 
         </div>
         <ChannelInfoContainer
