@@ -38,12 +38,38 @@ alejandro = User.create({
   password: "starwars",
   image_url: "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Batman-BenAffleck.jpg/200px-Batman-BenAffleck.jpg"
   })
+
 derek = User.create({
   username: "derek",
   password: "starwars",
   image_url: "https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/10/15/14/lebron-0.jpg?w968h681"
 
   })
+
+dirk = User.create({
+  username: "dirk dirksen",
+  password: "starwars",
+  image_url: "https://pbs.twimg.com/profile_images/890036276191043584/jINeJbEq_400x400.jpg"
+  })
+
+ruijia = User.create({
+  username: "ruijia",
+  password: "starwars",
+  image_url: "https://cdn0.iconfinder.com/data/icons/colorful-commerce-and-shopping-1/600/people-shopper-mall-shopping-girl-business-bags-512.png"
+  })
+
+alice = User.create({
+  username: "alice-neko",
+  password: "starwars",
+  image_url: "https://sdl-stickershop.line.naver.jp/products/0/0/1/1265244/LINEStorePC/main.png?__=20161019"
+  })
+
+chris = User.create({
+  username: "piY",
+  password: "starwars",
+  image_url: "https://www.rei.com/media/product/492118"
+  })
+
 tomcruise = User.create({
   username: "Maverick",
   password: "starwars",
@@ -128,6 +154,10 @@ Subscription.create({user_id: tomcruise.id, channel_id: general.id})
 Subscription.create({user_id: iroh.id, channel_id: general.id})
 Subscription.create({user_id: saitama.id, channel_id: general.id})
 Subscription.create({user_id: l.id, channel_id: general.id})
+Subscription.create({user_id: dirk.id, channel_id: general.id})
+Subscription.create({user_id: ruijia.id, channel_id: general.id})
+Subscription.create({user_id: alice.id, channel_id: general.id})
+Subscription.create({user_id: chris.id, channel_id: general.id})
 Subscription.create({user_id: goose.id, channel_id: reducks.id})
 Subscription.create({user_id: oddish.id, channel_id: reducks.id})
 Subscription.create({user_id: goose.id, channel_id: quackacademy.id})
@@ -150,16 +180,7 @@ Message.create({
   channel_id: general.id,
   user_id: goose.id
   })
-Message.create({
-  body: "Wow Look at me go!",
-  channel_id: general.id,
-  user_id: goose.id
-  })
-Message.create({
-  body: "Now its time to test!",
-  channel_id: general.id,
-  user_id: goose.id
-  })
+
 
 Message.create({
   body: "This channel has a message!",
@@ -168,7 +189,43 @@ Message.create({
   })
 
 Message.create({
-  body: "So does this one!",
+  body: "DON'T FORGET, Quack-tive Record is super important and you will definitely need to know how it works for job interviews!",
   channel_id: quackacademy.id,
+  user_id: liz.id
+  })
+
+Message.create({
+  body: "BREAK FOR LUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUNCH!!!",
+  channel_id: quackacademy.id,
+  user_id: liz.id
+  })
+
+Message.create({
+  body: "There's a bogey on my tail, Goose!",
+  channel_id: topgun.id,
+  user_id: tomcruise.id
+  })
+
+Message.create({
+  body: "quack?",
+  channel_id: topgun.id,
   user_id: goose.id
+  })
+
+Message.create({
+  body: "You're my eyes, Goose!!!",
+  channel_id: topgun.id,
+  user_id: tomcruise.id
+  })
+
+Message.create({
+  body: "Quack?!?",
+  channel_id: topgun.id,
+  user_id: goose.id
+  })
+
+Message.create({
+  body: "How about a quick round of beach volleyball, Goose?",
+  channel_id: topgun.id,
+  user_id: tomcruise.id
   })

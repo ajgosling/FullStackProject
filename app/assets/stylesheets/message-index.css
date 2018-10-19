@@ -76,7 +76,7 @@
 }
 
 .message-gif {
-  border-left: 2px solid lightpink;
+  border-left: 2px solid lightgray;
   pointer-events: none;
 
 }

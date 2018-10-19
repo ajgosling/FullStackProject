@@ -64,7 +64,7 @@ class MessageForm extends React.Component {
         onGifSelection={(id) => this.handleGif(id)}
         styles={{
           wrapper: {
-            'width': '666px',
+            'width': '444px',
             'height': '50%',
             'maxWidth': '100%',
             'paddingTop': '5px',
@@ -90,7 +90,7 @@ class MessageForm extends React.Component {
           },
           searchBar: {
             'borderRadius': '5px',
-            'border': '1px solid '
+            'border': '1px solid lightgray'
           },
 
         }}
@@ -110,6 +110,7 @@ class MessageForm extends React.Component {
             onKeyPress={this.handleKeyPress}
             placeholder={`Message #${this.props.channel.title}`}/>
         </form>
+
 
       </div>
 

@@ -15,10 +15,15 @@ BODY
   width: 100%;
 }
 
+
 .quack-logo {
-  height: 25px;
+  height: 30px;
   padding: 16px;
-  margin-top: 6px;
+  margin-top: 3px;
+}
+
+.quack-logo:hover {
+  cursor: pointer;
 }
 
 .greeting-header-list li {

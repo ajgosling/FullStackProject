@@ -69,7 +69,6 @@ class ConsoleHeader extends React.Component {
     let dark;
     if (this.state.darkMode) {
       dark = <div className="darkness">
-  
         <img src={window.images.batman} />
 
       </div>

@@ -4,7 +4,12 @@ import {Link} from 'react-router-dom';
 const GreetingHeader = () => (
   <header className='greeting-header'>
     <ul className='greeting-header-list'>
-      <img className='quack-logo' src={window.images.logo} />
+
+      <Link to="/">
+        <img className='quack-logo' src={window.images.duck} />
+      </Link>
+
+
       <li className='why-quack'><span>Why Quack?</span></li>
       <li><span>Solutions</span></li>
       <li><span>Resources</span></li>
