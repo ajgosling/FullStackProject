@@ -14,7 +14,7 @@ class Api::SubscriptionsController < ApplicationController
     oldSub = Subscription.find_by(channel_id: params[:channel_id], user_id: current_user.id)
     oldSub.destroy
 
-    @channel = Channel.find(params[:channel_id])
-    render "api/channels/show"
+    @channels = Channel.all
+    render "api/channels/index"
   end
 end

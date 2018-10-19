@@ -76,9 +76,9 @@ export const createSubscription = (id) => (dispatch) => {
 //delete user channel member
 export const deleteSubscription = (channelId) => (dispatch) => {
   return (SubscriptionApiUtil.ajaxDeleteSubscription(channelId)
-    .then((channel) => {
+    .then((channels) => {
       return (
-        dispatch(receiveChannel(channel))
+        dispatch(receiveChannels(channels))
       )
     }, err => (
       dispatch(receiveChannelErrors(err.responseJSON))
