@@ -193,6 +193,7 @@
 .selected-user-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   vertical-align: middle;
   margin-bottom: 10px;
@@ -211,6 +212,11 @@
   color: white;
   padding: 2px 5px;
   margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.chosen {
+  background-color: #c8ffdd;
 }
 
 .selected-user-item:hover {

@@ -54,7 +54,7 @@ class DirectMessageForm extends React.Component {
   handleSubmit() {
     this.props.createChannel(this.state)
       .then((res) => this.props.history.push(`/channels/${res.payload.channel.id}`))
-      .then(() => this.props.closeDirectModal())
+      .then(this.handleClose)
 
   }
   handleClose() {
@@ -106,7 +106,7 @@ class DirectMessageForm extends React.Component {
           return (
             <li
               key={user.id}
-              className="search-user-item"
+              className={this.state.ids.includes(user.id) ? "search-user-item chosen" : "search-user-item"}
               onClick={() => this.toggleUserInclude(user.id)}>
               <img src={this.props.users[user.id].imageUrl} className="user-list-picture"/>
 
