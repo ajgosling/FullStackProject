@@ -29,6 +29,10 @@ class MessageIndex extends React.Component {
 
     })
 
+    if (messages.length < 1) {
+      messages = <div>No Messages Here</div>
+    }
+
     return messages;
 
 
