@@ -30,7 +30,7 @@ class MessageIndex extends React.Component {
     })
 
     if (messages.length < 1) {
-      messages = <div>No Messages Here</div>
+      messages = <div>No Messages Hither</div>
     }
 
     return messages;
