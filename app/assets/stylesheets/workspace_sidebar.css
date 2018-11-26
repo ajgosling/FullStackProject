@@ -6,7 +6,7 @@
 
 .channels-and-messages {
   width: 220px;
-  height: 100%;
+  height: calc(100% - 30px);
   background-color: #51397e;
   font-weight: 300;
   font-size: 16px;
@@ -17,6 +17,10 @@
 
 .channels-and-messages:hover {
   overflow-y: scroll;
+}
+
+.website-links {
+  background-color: #51397e;
 }
 
 ::-webkit-scrollbar {
