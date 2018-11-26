@@ -53,7 +53,7 @@ class WorkspaceSidebar extends React.Component {
         <ChannelForm />
         <DirectMessageForm />
         <div className="website-links">
-          <i class="fab fa-github"></i>
+          <i className="fab fa-github"></i>
         </div>
       </div>
 
