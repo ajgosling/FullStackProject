@@ -6,7 +6,6 @@
   width: calc(100% - 27px);
   /* display: flex; */
   flex-direction: column;
-  padding-left: 25px;
 }
 
 .test-div {
@@ -23,9 +22,13 @@
   /* overflow: auto; */
   word-wrap: break-word;
   max-height: auto;
-
-  /* flex-wrap: wrap; */
+  padding-left: 25px;
 }
+
+.message-index-item:hover {
+  background-color: lightgrey;
+}
+
 
 .image-holder {
   height: 100%;
@@ -74,6 +77,7 @@
 .message-body {
   line-height: 1.5;
 }
+
 
 .message-gif {
   border-left: 2px solid lightgray;
