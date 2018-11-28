@@ -20,12 +20,18 @@ class MessageIndex extends React.Component {
   renderMessages() {
     let messages = [];
     Object.values(this.props.messages).forEach((message) => {
-
+      console.log(message);
       messages.push(<MessageIndexItem
         key={message.id}
         message={message}
         users={this.props.users}
         />)
+
+      messages.push(<div
+        className="message-date-divider">
+        
+
+      </div>)
 
     })
 
@@ -64,7 +70,3 @@ class MessageIndex extends React.Component {
 
 
 export default MessageIndex;
-
-
-// App[this.props.currentChannel.id].speak(this.state)
-//this.state is entire message object (userid, channelid)
