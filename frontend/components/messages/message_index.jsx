@@ -20,7 +20,7 @@ class MessageIndex extends React.Component {
   renderMessages() {
     let messages = [];
     Object.values(this.props.messages).forEach((message) => {
-      console.log(message);
+      console.log(message.created);
       messages.push(<MessageIndexItem
         key={message.id}
         message={message}
@@ -29,7 +29,7 @@ class MessageIndex extends React.Component {
 
       messages.push(<div
         className="message-date-divider">
-        
+        {message.created}
 
       </div>)
 
