@@ -51,12 +51,10 @@ class MessageIndex extends React.Component {
       messageIndex.scrollTop = messageIndex.scrollHeight;
     }, 0);
   }
+
+
   render() {
-    if (!this.props.messages) {
-      return (
-        <h1>NO MESSAGES YET!</h1>
-      )
-    }
+
 
     const messages = this.renderMessages();
     return (
