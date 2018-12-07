@@ -17,6 +17,11 @@ class MessageIndex extends React.Component {
     this.scrollToBottom();
   }
 
+  generateDate(date) {
+    const today = new Date;
+    let yesterday = today;
+    yesterday.setDate(today.getDate() - 1);
+  }
   renderMessages() {
     let messages = [];
     Object.values(this.props.messages).forEach((message) => {
@@ -26,7 +31,8 @@ class MessageIndex extends React.Component {
         message={message}
         users={this.props.users}
         />)
-
+      
+      
       messages.push(<div
         className="message-date-divider">
         {message.created}
@@ -36,7 +42,7 @@ class MessageIndex extends React.Component {
     })
 
     if (messages.length < 1) {
-      messages = <div>No Messages Hither</div>
+      messages = <div>No Messages Here</div>
     }
 
     return messages;
@@ -54,8 +60,6 @@ class MessageIndex extends React.Component {
 
 
   render() {
-
-
     const messages = this.renderMessages();
     return (
 
