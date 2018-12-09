@@ -6,11 +6,6 @@ import DirectMessageForm from '../channel/direct_message_form';
 
 class WorkspaceSidebar extends React.Component {
 
-  handleGithubClick() {
-    console.log('here');
-    // window.location.assign('https://github.com/ajgosling');
-  }
-
   render() {
     const normalChannels = {};
     const directMessages = {};
@@ -46,9 +41,15 @@ class WorkspaceSidebar extends React.Component {
         <ChannelForm />
         <DirectMessageForm />
         <div className="website-links">
-          <i onClick={() => handleGithubClick} className="fab fa-github" />
-          <i className="fab fa-github" />
-          <i className="fab fa-github" />
+          <a href="https://github.com/ajgosling">
+            <i className="fab fa-github" />
+          </a>
+          <a href="https://github.com/ajgosling">
+            <i className="fab fa-github" />
+          </a>
+          <a href="https://github.com/ajgosling">
+            <i className="fab fa-github" />
+          </a>
         </div>
       </div>;
   }
