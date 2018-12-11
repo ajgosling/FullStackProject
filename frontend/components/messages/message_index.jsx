@@ -18,9 +18,26 @@ class MessageIndex extends React.Component {
   }
 
   generateDate(date) {
+    let time;
     const today = new Date;
-    let yesterday = today;
+    let yesterday = new Date;
     yesterday.setDate(today.getDate() - 1);
+    
+    if (today.getMonth() === date.getMonth()
+      && today.getDate() === date.getDate()
+      && today.getYear() === date.getYear()) {
+      time = "Today";
+    } else if (yesterday.getMonth() === date.getMonth()
+      && yesterday.getDate() === date.getDate()
+      && yesterday.getYear() === date.getYear()) {
+      time = "Yesterday";
+    } else {
+      const thisMonth = "January February March April May June July August September October November December".split(' ')[date.getMonth()];
+      const thisDay = "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split(' ')[date.getDay()];
+      time = `${thisDay}, ${thisMonth} ${date.getDate()}`;
+    }
+    return time;
+    
   }
   renderMessages() {
     let messages = [];
