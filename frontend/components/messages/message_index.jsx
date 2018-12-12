@@ -32,7 +32,7 @@ class MessageIndex extends React.Component {
       && yesterday.getYear() === date.getYear()) {
       time = "Yesterday";
     } else {
-      const thisMonth = "January February March April May June July August September October November December".split(' ')[date.getMonth()];
+      const thisMonth = "Januar February March April May June July August September October November December".split(' ')[date.getMonth()];
       const thisDay = "Sunday Monday Tuesday Wednesday Thursday Friday Saturday".split(' ')[date.getDay()];
       time = `${thisDay}, ${thisMonth} ${date.getDate()}`;
     }
@@ -41,6 +41,11 @@ class MessageIndex extends React.Component {
   }
   renderMessages() {
     let messages = [];
+    messages.push(<div
+      className="message-index-beginning">
+
+
+    </div>)
     Object.values(this.props.messages).forEach((message) => {
       console.log(message.created);
       messages.push(<MessageIndexItem
@@ -58,9 +63,7 @@ class MessageIndex extends React.Component {
 
     })
 
-    if (messages.length < 1) {
-      messages = <div>No Messages Here</div>
-    }
+
 
     return messages;
 
