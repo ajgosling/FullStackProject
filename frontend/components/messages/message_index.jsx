@@ -41,9 +41,10 @@ class MessageIndex extends React.Component {
   }
   renderMessages() {
     let messages = [];
+    
     messages.push(<div
       className="message-index-beginning">
-
+      This is the very beginning of your messages with
 
     </div>)
     Object.values(this.props.messages).forEach((message) => {
