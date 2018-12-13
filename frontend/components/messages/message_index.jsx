@@ -44,25 +44,30 @@ class MessageIndex extends React.Component {
     
     messages.push(<div
       className="message-index-beginning">
-      This is the very beginning of your messages with
+      This is the very beginning of your messages in this channel
 
     </div>)
-    Object.values(this.props.messages).forEach((message) => {
-      console.log(message.created);
-      messages.push(<MessageIndexItem
-        key={message.id}
-        message={message}
-        users={this.props.users}
-        />)
+
+    for (let i = 0; i < this.props.messages.length; i++) {
+      let currMessage = this.props.messages[i];
+      let prevMessage = this.props.messages[i - 1] || {userId: {}}
+      
+    }
+    // Object.values(this.props.messages).forEach((message) => {
+    //   messages.push(<MessageIndexItem
+    //     key={message.id}
+    //     message={message}
+    //     users={this.props.users}
+    //     />)
       
       
-      messages.push(<div
-        className="message-date-divider">
-        {message.created}
+    //   messages.push(<div
+    //     className="message-date-divider">
+    //     {message.created}
 
-      </div>)
+    //   </div>)
 
-    })
+    // })
 
 
 
